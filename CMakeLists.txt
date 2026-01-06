@@ -12,6 +12,10 @@ add_executable(2025_System_and_Network_Security
         src/hybrid_sig.c
         src/ecdsa_sig.c
         src/dilithium_sig.c
+        src/sphincs_sig.c
+        src/rsa_pss_sig.c
+        src/falcon_sig.c
+        include/scheme.h
 )
 
 target_include_directories(2025_System_and_Network_Security

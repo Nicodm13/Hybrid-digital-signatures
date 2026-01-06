@@ -177,6 +177,30 @@ src/ecdsa_sig.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/ecdsa_sig.c.s
 .PHONY : src/ecdsa_sig.c.s
 
+src/falcon_sig.o: src/falcon_sig.c.o
+.PHONY : src/falcon_sig.o
+
+# target to build an object file
+src/falcon_sig.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/falcon_sig.c.o
+.PHONY : src/falcon_sig.c.o
+
+src/falcon_sig.i: src/falcon_sig.c.i
+.PHONY : src/falcon_sig.i
+
+# target to preprocess a source file
+src/falcon_sig.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/falcon_sig.c.i
+.PHONY : src/falcon_sig.c.i
+
+src/falcon_sig.s: src/falcon_sig.c.s
+.PHONY : src/falcon_sig.s
+
+# target to generate assembly for a file
+src/falcon_sig.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/falcon_sig.c.s
+.PHONY : src/falcon_sig.c.s
+
 src/hybrid_sig.o: src/hybrid_sig.c.o
 .PHONY : src/hybrid_sig.o
 
@@ -225,6 +249,54 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/rsa_pss_sig.o: src/rsa_pss_sig.c.o
+.PHONY : src/rsa_pss_sig.o
+
+# target to build an object file
+src/rsa_pss_sig.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/rsa_pss_sig.c.o
+.PHONY : src/rsa_pss_sig.c.o
+
+src/rsa_pss_sig.i: src/rsa_pss_sig.c.i
+.PHONY : src/rsa_pss_sig.i
+
+# target to preprocess a source file
+src/rsa_pss_sig.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/rsa_pss_sig.c.i
+.PHONY : src/rsa_pss_sig.c.i
+
+src/rsa_pss_sig.s: src/rsa_pss_sig.c.s
+.PHONY : src/rsa_pss_sig.s
+
+# target to generate assembly for a file
+src/rsa_pss_sig.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/rsa_pss_sig.c.s
+.PHONY : src/rsa_pss_sig.c.s
+
+src/sphincs_sig.o: src/sphincs_sig.c.o
+.PHONY : src/sphincs_sig.o
+
+# target to build an object file
+src/sphincs_sig.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/sphincs_sig.c.o
+.PHONY : src/sphincs_sig.c.o
+
+src/sphincs_sig.i: src/sphincs_sig.c.i
+.PHONY : src/sphincs_sig.i
+
+# target to preprocess a source file
+src/sphincs_sig.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/sphincs_sig.c.i
+.PHONY : src/sphincs_sig.c.i
+
+src/sphincs_sig.s: src/sphincs_sig.c.s
+.PHONY : src/sphincs_sig.s
+
+# target to generate assembly for a file
+src/sphincs_sig.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/sphincs_sig.c.s
+.PHONY : src/sphincs_sig.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -240,12 +312,21 @@ help:
 	@echo "... src/ecdsa_sig.o"
 	@echo "... src/ecdsa_sig.i"
 	@echo "... src/ecdsa_sig.s"
+	@echo "... src/falcon_sig.o"
+	@echo "... src/falcon_sig.i"
+	@echo "... src/falcon_sig.s"
 	@echo "... src/hybrid_sig.o"
 	@echo "... src/hybrid_sig.i"
 	@echo "... src/hybrid_sig.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/rsa_pss_sig.o"
+	@echo "... src/rsa_pss_sig.i"
+	@echo "... src/rsa_pss_sig.s"
+	@echo "... src/sphincs_sig.o"
+	@echo "... src/sphincs_sig.i"
+	@echo "... src/sphincs_sig.s"
 .PHONY : help
 
 

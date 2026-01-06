@@ -10,8 +10,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/c/Development/School/2025 System- and Network Security/src/dilithium_sig.c" "CMakeFiles/2025_System_and_Network_Security.dir/src/dilithium_sig.c.o" "gcc" "CMakeFiles/2025_System_and_Network_Security.dir/src/dilithium_sig.c.o.d"
   "/mnt/c/Development/School/2025 System- and Network Security/src/ecdsa_sig.c" "CMakeFiles/2025_System_and_Network_Security.dir/src/ecdsa_sig.c.o" "gcc" "CMakeFiles/2025_System_and_Network_Security.dir/src/ecdsa_sig.c.o.d"
+  "/mnt/c/Development/School/2025 System- and Network Security/src/falcon_sig.c" "CMakeFiles/2025_System_and_Network_Security.dir/src/falcon_sig.c.o" "gcc" "CMakeFiles/2025_System_and_Network_Security.dir/src/falcon_sig.c.o.d"
   "/mnt/c/Development/School/2025 System- and Network Security/src/hybrid_sig.c" "CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_sig.c.o" "gcc" "CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_sig.c.o.d"
   "/mnt/c/Development/School/2025 System- and Network Security/src/main.c" "CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.o" "gcc" "CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.o.d"
+  "/mnt/c/Development/School/2025 System- and Network Security/src/rsa_pss_sig.c" "CMakeFiles/2025_System_and_Network_Security.dir/src/rsa_pss_sig.c.o" "gcc" "CMakeFiles/2025_System_and_Network_Security.dir/src/rsa_pss_sig.c.o.d"
+  "/mnt/c/Development/School/2025 System- and Network Security/src/sphincs_sig.c" "CMakeFiles/2025_System_and_Network_Security.dir/src/sphincs_sig.c.o" "gcc" "CMakeFiles/2025_System_and_Network_Security.dir/src/sphincs_sig.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

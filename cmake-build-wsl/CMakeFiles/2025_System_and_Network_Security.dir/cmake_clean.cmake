@@ -5,10 +5,16 @@ file(REMOVE_RECURSE
   "CMakeFiles/2025_System_and_Network_Security.dir/src/dilithium_sig.c.o.d"
   "CMakeFiles/2025_System_and_Network_Security.dir/src/ecdsa_sig.c.o"
   "CMakeFiles/2025_System_and_Network_Security.dir/src/ecdsa_sig.c.o.d"
+  "CMakeFiles/2025_System_and_Network_Security.dir/src/falcon_sig.c.o"
+  "CMakeFiles/2025_System_and_Network_Security.dir/src/falcon_sig.c.o.d"
   "CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_sig.c.o"
   "CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_sig.c.o.d"
   "CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.o"
   "CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.o.d"
+  "CMakeFiles/2025_System_and_Network_Security.dir/src/rsa_pss_sig.c.o"
+  "CMakeFiles/2025_System_and_Network_Security.dir/src/rsa_pss_sig.c.o.d"
+  "CMakeFiles/2025_System_and_Network_Security.dir/src/sphincs_sig.c.o"
+  "CMakeFiles/2025_System_and_Network_Security.dir/src/sphincs_sig.c.o.d"
 )
 
 # Per-language clean rules from dependency scanning.
