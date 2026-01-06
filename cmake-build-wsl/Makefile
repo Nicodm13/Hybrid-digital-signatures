@@ -201,30 +201,6 @@ src/falcon_sig.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/falcon_sig.c.s
 .PHONY : src/falcon_sig.c.s
 
-src/hybrid_sig.o: src/hybrid_sig.c.o
-.PHONY : src/hybrid_sig.o
-
-# target to build an object file
-src/hybrid_sig.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_sig.c.o
-.PHONY : src/hybrid_sig.c.o
-
-src/hybrid_sig.i: src/hybrid_sig.c.i
-.PHONY : src/hybrid_sig.i
-
-# target to preprocess a source file
-src/hybrid_sig.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_sig.c.i
-.PHONY : src/hybrid_sig.c.i
-
-src/hybrid_sig.s: src/hybrid_sig.c.s
-.PHONY : src/hybrid_sig.s
-
-# target to generate assembly for a file
-src/hybrid_sig.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_sig.c.s
-.PHONY : src/hybrid_sig.c.s
-
 src/main.o: src/main.c.o
 .PHONY : src/main.o
 
@@ -315,9 +291,6 @@ help:
 	@echo "... src/falcon_sig.o"
 	@echo "... src/falcon_sig.i"
 	@echo "... src/falcon_sig.s"
-	@echo "... src/hybrid_sig.o"
-	@echo "... src/hybrid_sig.i"
-	@echo "... src/hybrid_sig.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

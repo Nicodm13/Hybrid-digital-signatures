@@ -81,12 +81,12 @@ clean: CMakeFiles/2025_System_and_Network_Security.dir/clean
 CMakeFiles/2025_System_and_Network_Security.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8 "Built target 2025_System_and_Network_Security"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=1,2,3,4,5,6,7 "Built target 2025_System_and_Network_Security"
 .PHONY : CMakeFiles/2025_System_and_Network_Security.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/2025_System_and_Network_Security.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" 8
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/2025_System_and_Network_Security.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" 0
 .PHONY : CMakeFiles/2025_System_and_Network_Security.dir/rule

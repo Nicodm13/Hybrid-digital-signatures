@@ -9,7 +9,6 @@ find_package(OpenSSL REQUIRED)
 
 add_executable(2025_System_and_Network_Security
         src/main.c
-        src/hybrid_sig.c
         src/ecdsa_sig.c
         src/dilithium_sig.c
         src/sphincs_sig.c
