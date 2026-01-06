@@ -1,0 +1,11 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" -S "/mnt/c/Development/School/2025 System- and Network Security" -B "/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl"
+-- The C compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Configuring done (1.5s)
+-- Generating done (0.1s)
+-- Build files have been written to: /mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl
