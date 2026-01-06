@@ -8,11 +8,15 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <stdint.h>
+#include <string.h>
+#include <time.h>
 #include <openssl/evp.h>
 
+#define NUM_ITERATIONS 1000
+
 /* ===================== Utilities ===================== */
+
 int load_file(const char *path, unsigned char **buf, size_t *len) {
     FILE *f = fopen(path, "rb");
     if (!f) return -1;
@@ -54,6 +58,12 @@ void sha256(const uint8_t *msg, size_t len, uint8_t out[32]) {
     EVP_DigestUpdate(ctx, msg, len);
     EVP_DigestFinal_ex(ctx, out, NULL);
     EVP_MD_CTX_free(ctx);
+}
+
+static inline double now_seconds(void) {
+    struct timespec ts;
+    clock_gettime(CLOCK_MONOTONIC, &ts);
+    return ts.tv_sec + ts.tv_nsec * 1e-9;
 }
 
 /* ===================== Abstractions ===================== */
@@ -116,52 +126,16 @@ scheme_def_t schemes[] = {
 const scheme_def_t *get_scheme_def(scheme_t id) {
     size_t count = sizeof(schemes) / sizeof(schemes[0]);
     for (size_t i = 0; i < count; i++) {
-        if (schemes[i].id == id) {
+        if (schemes[i].id == id)
             return &schemes[i];
-        }
     }
     return NULL;
 }
 
-/* ===================== Evaluation ===================== */
-
-void evaluate_scheme(const scheme_def_t *s, const uint8_t hash[32]) {
-    uint8_t *sig1 = NULL, *sig2 = NULL;
-    size_t len1 = 0, len2 = 0;
-    int ok = 0;
-
-    printf("\nScheme: %s\n", s->name);
-
-    if (s->classical) {
-        s->classical->keygen();
-        s->classical->sign(hash, 32, &sig1, &len1);
-    }
-
-    if (s->pq) {
-        s->pq->keygen();
-        s->pq->sign(hash, 32, &sig2, &len2);
-    }
-
-    if (s->classical)
-        ok |= s->classical->verify(hash, 32, sig1, len1);
-
-    if (s->pq)
-        ok |= s->pq->verify(hash, 32, sig2, len2);
-
-    printf("Signature size: %zu bytes\n", len1 + len2);
-    printf("Verification: %s\n", ok == 0 ? "OK" : "FAIL");
-
-    free(sig1);
-    free(sig2);
-
-    if (s->classical) s->classical->cleanup();
-    if (s->pq) s->pq->cleanup();
-}
-
-/* ===================== Main ===================== */
+/* ===================== Terminal Selection ===================== */
 
 scheme_t select_scheme_from_terminal(void) {
-    int choice = 0;
+    int choice;
 
     printf("\nSelect signature scheme:\n\n");
     printf(" 1  - ECDSA only\n");
@@ -169,47 +143,77 @@ scheme_t select_scheme_from_terminal(void) {
     printf(" 3  - ML-DSA only\n");
     printf(" 4  - Falcon only\n");
     printf(" 5  - SPHINCS+ only\n");
-    printf("\n Hybrid (ECDSA + PQ):\n");
     printf(" 6  - ECDSA + ML-DSA\n");
     printf(" 7  - ECDSA + Falcon\n");
     printf(" 8  - ECDSA + SPHINCS+\n");
-    printf("\n Hybrid (RSA-PSS + PQ):\n");
     printf(" 9  - RSA-PSS + ML-DSA\n");
     printf("10  - RSA-PSS + Falcon\n");
     printf("11  - RSA-PSS + SPHINCS+\n\n");
-
     printf("Enter choice (1–11): ");
-    if (scanf("%d", &choice) != 1) {
-        return -1;
-    }
 
-    switch (choice) {
-        case 1:  return SCHEME_ECDSA_ONLY;
-        case 2:  return SCHEME_RSA_PSS_ONLY;
-        case 3:  return SCHEME_ML_DSA_ONLY;
-        case 4:  return SCHEME_FALCON_ONLY;
-        case 5:  return SCHEME_SPHINCS_ONLY;
-        case 6:  return SCHEME_ECDSA_ML_DSA;
-        case 7:  return SCHEME_ECDSA_FALCON;
-        case 8:  return SCHEME_ECDSA_SPHINCS;
-        case 9:  return SCHEME_RSA_PSS_ML_DSA;
-        case 10: return SCHEME_RSA_PSS_FALCON;
-        case 11: return SCHEME_RSA_PSS_SPHINCS;
-        default: return -1;
-    }
+    if (scanf("%d", &choice) != 1)
+        return -1;
+
+    return (scheme_t)(choice - 1);
 }
+
+/* ===================== Evaluation ===================== */
+
+void evaluate_scheme(const scheme_def_t *s, const uint8_t hash[32]) {
+    uint8_t *sig1 = NULL, *sig2 = NULL;
+    size_t len1 = 0, len2 = 0;
+
+    double t_start, t_end;
+    double sign_time, verify_time;
+
+    printf("\nScheme: %s\n", s->name);
+
+    if (s->classical) s->classical->keygen();
+    if (s->pq)        s->pq->keygen();
+
+    t_start = now_seconds();
+    for (int i = 0; i < NUM_ITERATIONS; i++) {
+        free(sig1); free(sig2);
+        sig1 = sig2 = NULL;
+        len1 = len2 = 0;
+
+        if (s->classical)
+            s->classical->sign(hash, 32, &sig1, &len1);
+        if (s->pq)
+            s->pq->sign(hash, 32, &sig2, &len2);
+    }
+    t_end = now_seconds();
+    sign_time = (t_end - t_start) / NUM_ITERATIONS;
+
+    t_start = now_seconds();
+    for (int i = 0; i < NUM_ITERATIONS; i++) {
+        int ok = 0;
+        if (s->classical)
+            ok |= s->classical->verify(hash, 32, sig1, len1);
+        if (s->pq)
+            ok |= s->pq->verify(hash, 32, sig2, len2);
+    }
+    t_end = now_seconds();
+    verify_time = (t_end - t_start) / NUM_ITERATIONS;
+
+    printf("Signature size (bytes): %zu\n", len1 + len2);
+    printf("Avg signing time (ms): %.6f\n", sign_time * 1000.0);
+    printf("Avg verification time (ms): %.6f\n", verify_time * 1000.0);
+
+    free(sig1);
+    free(sig2);
+    if (s->classical) s->classical->cleanup();
+    if (s->pq)        s->pq->cleanup();
+}
+
+/* ===================== Main ===================== */
 
 int main(void) {
 
-    scheme_t selected_scheme = select_scheme_from_terminal();
-    if (selected_scheme < 0) {
-        printf("Invalid selection\n");
-        return 1;
-    }
-
-    const scheme_def_t *scheme = get_scheme_def(selected_scheme);
+    scheme_t selected = select_scheme_from_terminal();
+    const scheme_def_t *scheme = get_scheme_def(selected);
     if (!scheme) {
-        printf("Scheme not found\n");
+        printf("Invalid scheme\n");
         return 1;
     }
 
@@ -229,4 +233,3 @@ int main(void) {
     free(manifest);
     return 0;
 }
-
