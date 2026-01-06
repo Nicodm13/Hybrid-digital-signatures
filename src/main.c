@@ -13,7 +13,7 @@
 #include <time.h>
 #include <openssl/evp.h>
 
-#define NUM_ITERATIONS 1000
+#define NUM_ITERATIONS 1000 // Used to measure time
 
 /* ===================== Utilities ===================== */
 
@@ -138,6 +138,7 @@ scheme_t select_scheme_from_terminal(void) {
     int choice;
 
     printf("\nSelect signature scheme:\n\n");
+    printf(" 0  - Exit\n\n");
     printf(" 1  - ECDSA only\n");
     printf(" 2  - RSA-PSS only\n");
     printf(" 3  - ML-DSA only\n");
@@ -149,10 +150,13 @@ scheme_t select_scheme_from_terminal(void) {
     printf(" 9  - RSA-PSS + ML-DSA\n");
     printf("10  - RSA-PSS + Falcon\n");
     printf("11  - RSA-PSS + SPHINCS+\n\n");
-    printf("Enter choice (1–11): ");
+    printf("Enter choice (0–11): ");
 
     if (scanf("%d", &choice) != 1)
         return -1;
+
+    if (choice == 0)
+        return -1;  // exit signal
 
     return (scheme_t)(choice - 1);
 }
@@ -207,15 +211,7 @@ void evaluate_scheme(const scheme_def_t *s, const uint8_t hash[32]) {
 }
 
 /* ===================== Main ===================== */
-
 int main(void) {
-
-    scheme_t selected = select_scheme_from_terminal();
-    const scheme_def_t *scheme = get_scheme_def(selected);
-    if (!scheme) {
-        printf("Invalid scheme\n");
-        return 1;
-    }
 
     unsigned char *manifest = NULL;
     size_t manifest_len = 0;
@@ -228,7 +224,21 @@ int main(void) {
     uint8_t hash[32];
     sha256(manifest, manifest_len, hash);
 
-    evaluate_scheme(scheme, hash);
+    while (1) {
+        scheme_t selected = select_scheme_from_terminal();
+        if (selected < 0) {
+            printf("Exiting.\n");
+            break;
+        }
+
+        const scheme_def_t *scheme = get_scheme_def(selected);
+        if (!scheme) {
+            printf("Invalid scheme selection\n");
+            continue;
+        }
+
+        evaluate_scheme(scheme, hash);
+    }
 
     free(manifest);
     return 0;
