@@ -8,12 +8,12 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 find_package(OpenSSL REQUIRED)
 
 add_executable(2025_System_and_Network_Security
-        src/main.c
-        src/ecdsa_sig.c
-        src/dilithium_sig.c
-        src/sphincs_sig.c
-        src/rsa_pss_sig.c
-        src/falcon_sig.c
+        src/benchmark.c
+        src/signatures/ecdsa_sig.c
+        src/pq-signatures/dilithium_sig.c
+        src/pq-signatures/sphincs_sig.c
+        src/signatures/rsa_pss_sig.c
+        src/pq-signatures/falcon_sig.c
         include/scheme.h
 )
 

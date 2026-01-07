@@ -129,149 +129,149 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/build
 .PHONY : 2025_System_and_Network_Security/fast
 
-src/dilithium_sig.o: src/dilithium_sig.c.o
-.PHONY : src/dilithium_sig.o
+src/benchmark.o: src/benchmark.c.o
+.PHONY : src/benchmark.o
 
 # target to build an object file
-src/dilithium_sig.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/dilithium_sig.c.o
-.PHONY : src/dilithium_sig.c.o
+src/benchmark.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/benchmark.c.o
+.PHONY : src/benchmark.c.o
 
-src/dilithium_sig.i: src/dilithium_sig.c.i
-.PHONY : src/dilithium_sig.i
+src/benchmark.i: src/benchmark.c.i
+.PHONY : src/benchmark.i
 
 # target to preprocess a source file
-src/dilithium_sig.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/dilithium_sig.c.i
-.PHONY : src/dilithium_sig.c.i
+src/benchmark.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/benchmark.c.i
+.PHONY : src/benchmark.c.i
 
-src/dilithium_sig.s: src/dilithium_sig.c.s
-.PHONY : src/dilithium_sig.s
+src/benchmark.s: src/benchmark.c.s
+.PHONY : src/benchmark.s
 
 # target to generate assembly for a file
-src/dilithium_sig.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/dilithium_sig.c.s
-.PHONY : src/dilithium_sig.c.s
+src/benchmark.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/benchmark.c.s
+.PHONY : src/benchmark.c.s
 
-src/ecdsa_sig.o: src/ecdsa_sig.c.o
-.PHONY : src/ecdsa_sig.o
+src/pq-signatures/dilithium_sig.o: src/pq-signatures/dilithium_sig.c.o
+.PHONY : src/pq-signatures/dilithium_sig.o
 
 # target to build an object file
-src/ecdsa_sig.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/ecdsa_sig.c.o
-.PHONY : src/ecdsa_sig.c.o
+src/pq-signatures/dilithium_sig.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/dilithium_sig.c.o
+.PHONY : src/pq-signatures/dilithium_sig.c.o
 
-src/ecdsa_sig.i: src/ecdsa_sig.c.i
-.PHONY : src/ecdsa_sig.i
+src/pq-signatures/dilithium_sig.i: src/pq-signatures/dilithium_sig.c.i
+.PHONY : src/pq-signatures/dilithium_sig.i
 
 # target to preprocess a source file
-src/ecdsa_sig.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/ecdsa_sig.c.i
-.PHONY : src/ecdsa_sig.c.i
+src/pq-signatures/dilithium_sig.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/dilithium_sig.c.i
+.PHONY : src/pq-signatures/dilithium_sig.c.i
 
-src/ecdsa_sig.s: src/ecdsa_sig.c.s
-.PHONY : src/ecdsa_sig.s
+src/pq-signatures/dilithium_sig.s: src/pq-signatures/dilithium_sig.c.s
+.PHONY : src/pq-signatures/dilithium_sig.s
 
 # target to generate assembly for a file
-src/ecdsa_sig.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/ecdsa_sig.c.s
-.PHONY : src/ecdsa_sig.c.s
+src/pq-signatures/dilithium_sig.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/dilithium_sig.c.s
+.PHONY : src/pq-signatures/dilithium_sig.c.s
 
-src/falcon_sig.o: src/falcon_sig.c.o
-.PHONY : src/falcon_sig.o
+src/pq-signatures/falcon_sig.o: src/pq-signatures/falcon_sig.c.o
+.PHONY : src/pq-signatures/falcon_sig.o
 
 # target to build an object file
-src/falcon_sig.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/falcon_sig.c.o
-.PHONY : src/falcon_sig.c.o
+src/pq-signatures/falcon_sig.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/falcon_sig.c.o
+.PHONY : src/pq-signatures/falcon_sig.c.o
 
-src/falcon_sig.i: src/falcon_sig.c.i
-.PHONY : src/falcon_sig.i
+src/pq-signatures/falcon_sig.i: src/pq-signatures/falcon_sig.c.i
+.PHONY : src/pq-signatures/falcon_sig.i
 
 # target to preprocess a source file
-src/falcon_sig.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/falcon_sig.c.i
-.PHONY : src/falcon_sig.c.i
+src/pq-signatures/falcon_sig.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/falcon_sig.c.i
+.PHONY : src/pq-signatures/falcon_sig.c.i
 
-src/falcon_sig.s: src/falcon_sig.c.s
-.PHONY : src/falcon_sig.s
+src/pq-signatures/falcon_sig.s: src/pq-signatures/falcon_sig.c.s
+.PHONY : src/pq-signatures/falcon_sig.s
 
 # target to generate assembly for a file
-src/falcon_sig.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/falcon_sig.c.s
-.PHONY : src/falcon_sig.c.s
+src/pq-signatures/falcon_sig.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/falcon_sig.c.s
+.PHONY : src/pq-signatures/falcon_sig.c.s
 
-src/main.o: src/main.c.o
-.PHONY : src/main.o
+src/pq-signatures/sphincs_sig.o: src/pq-signatures/sphincs_sig.c.o
+.PHONY : src/pq-signatures/sphincs_sig.o
 
 # target to build an object file
-src/main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.o
-.PHONY : src/main.c.o
+src/pq-signatures/sphincs_sig.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/sphincs_sig.c.o
+.PHONY : src/pq-signatures/sphincs_sig.c.o
 
-src/main.i: src/main.c.i
-.PHONY : src/main.i
+src/pq-signatures/sphincs_sig.i: src/pq-signatures/sphincs_sig.c.i
+.PHONY : src/pq-signatures/sphincs_sig.i
 
 # target to preprocess a source file
-src/main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.i
-.PHONY : src/main.c.i
+src/pq-signatures/sphincs_sig.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/sphincs_sig.c.i
+.PHONY : src/pq-signatures/sphincs_sig.c.i
 
-src/main.s: src/main.c.s
-.PHONY : src/main.s
+src/pq-signatures/sphincs_sig.s: src/pq-signatures/sphincs_sig.c.s
+.PHONY : src/pq-signatures/sphincs_sig.s
 
 # target to generate assembly for a file
-src/main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.s
-.PHONY : src/main.c.s
+src/pq-signatures/sphincs_sig.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/sphincs_sig.c.s
+.PHONY : src/pq-signatures/sphincs_sig.c.s
 
-src/rsa_pss_sig.o: src/rsa_pss_sig.c.o
-.PHONY : src/rsa_pss_sig.o
+src/signatures/ecdsa_sig.o: src/signatures/ecdsa_sig.c.o
+.PHONY : src/signatures/ecdsa_sig.o
 
 # target to build an object file
-src/rsa_pss_sig.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/rsa_pss_sig.c.o
-.PHONY : src/rsa_pss_sig.c.o
+src/signatures/ecdsa_sig.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/signatures/ecdsa_sig.c.o
+.PHONY : src/signatures/ecdsa_sig.c.o
 
-src/rsa_pss_sig.i: src/rsa_pss_sig.c.i
-.PHONY : src/rsa_pss_sig.i
+src/signatures/ecdsa_sig.i: src/signatures/ecdsa_sig.c.i
+.PHONY : src/signatures/ecdsa_sig.i
 
 # target to preprocess a source file
-src/rsa_pss_sig.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/rsa_pss_sig.c.i
-.PHONY : src/rsa_pss_sig.c.i
+src/signatures/ecdsa_sig.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/signatures/ecdsa_sig.c.i
+.PHONY : src/signatures/ecdsa_sig.c.i
 
-src/rsa_pss_sig.s: src/rsa_pss_sig.c.s
-.PHONY : src/rsa_pss_sig.s
+src/signatures/ecdsa_sig.s: src/signatures/ecdsa_sig.c.s
+.PHONY : src/signatures/ecdsa_sig.s
 
 # target to generate assembly for a file
-src/rsa_pss_sig.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/rsa_pss_sig.c.s
-.PHONY : src/rsa_pss_sig.c.s
+src/signatures/ecdsa_sig.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/signatures/ecdsa_sig.c.s
+.PHONY : src/signatures/ecdsa_sig.c.s
 
-src/sphincs_sig.o: src/sphincs_sig.c.o
-.PHONY : src/sphincs_sig.o
+src/signatures/rsa_pss_sig.o: src/signatures/rsa_pss_sig.c.o
+.PHONY : src/signatures/rsa_pss_sig.o
 
 # target to build an object file
-src/sphincs_sig.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/sphincs_sig.c.o
-.PHONY : src/sphincs_sig.c.o
+src/signatures/rsa_pss_sig.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/signatures/rsa_pss_sig.c.o
+.PHONY : src/signatures/rsa_pss_sig.c.o
 
-src/sphincs_sig.i: src/sphincs_sig.c.i
-.PHONY : src/sphincs_sig.i
+src/signatures/rsa_pss_sig.i: src/signatures/rsa_pss_sig.c.i
+.PHONY : src/signatures/rsa_pss_sig.i
 
 # target to preprocess a source file
-src/sphincs_sig.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/sphincs_sig.c.i
-.PHONY : src/sphincs_sig.c.i
+src/signatures/rsa_pss_sig.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/signatures/rsa_pss_sig.c.i
+.PHONY : src/signatures/rsa_pss_sig.c.i
 
-src/sphincs_sig.s: src/sphincs_sig.c.s
-.PHONY : src/sphincs_sig.s
+src/signatures/rsa_pss_sig.s: src/signatures/rsa_pss_sig.c.s
+.PHONY : src/signatures/rsa_pss_sig.s
 
 # target to generate assembly for a file
-src/sphincs_sig.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/sphincs_sig.c.s
-.PHONY : src/sphincs_sig.c.s
+src/signatures/rsa_pss_sig.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/signatures/rsa_pss_sig.c.s
+.PHONY : src/signatures/rsa_pss_sig.c.s
 
 # Help Target
 help:
@@ -282,24 +282,24 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... 2025_System_and_Network_Security"
-	@echo "... src/dilithium_sig.o"
-	@echo "... src/dilithium_sig.i"
-	@echo "... src/dilithium_sig.s"
-	@echo "... src/ecdsa_sig.o"
-	@echo "... src/ecdsa_sig.i"
-	@echo "... src/ecdsa_sig.s"
-	@echo "... src/falcon_sig.o"
-	@echo "... src/falcon_sig.i"
-	@echo "... src/falcon_sig.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/rsa_pss_sig.o"
-	@echo "... src/rsa_pss_sig.i"
-	@echo "... src/rsa_pss_sig.s"
-	@echo "... src/sphincs_sig.o"
-	@echo "... src/sphincs_sig.i"
-	@echo "... src/sphincs_sig.s"
+	@echo "... src/benchmark.o"
+	@echo "... src/benchmark.i"
+	@echo "... src/benchmark.s"
+	@echo "... src/pq-signatures/dilithium_sig.o"
+	@echo "... src/pq-signatures/dilithium_sig.i"
+	@echo "... src/pq-signatures/dilithium_sig.s"
+	@echo "... src/pq-signatures/falcon_sig.o"
+	@echo "... src/pq-signatures/falcon_sig.i"
+	@echo "... src/pq-signatures/falcon_sig.s"
+	@echo "... src/pq-signatures/sphincs_sig.o"
+	@echo "... src/pq-signatures/sphincs_sig.i"
+	@echo "... src/pq-signatures/sphincs_sig.s"
+	@echo "... src/signatures/ecdsa_sig.o"
+	@echo "... src/signatures/ecdsa_sig.i"
+	@echo "... src/signatures/ecdsa_sig.s"
+	@echo "... src/signatures/rsa_pss_sig.o"
+	@echo "... src/signatures/rsa_pss_sig.i"
+	@echo "... src/signatures/rsa_pss_sig.s"
 .PHONY : help
 
 
