@@ -1,4 +1,5 @@
 #include "scheme.h"
+#include "hash.h"
 
 #include "ecdsa_sig.h"
 #include "rsa_pss_sig.h"
@@ -13,7 +14,7 @@
 #include <time.h>
 #include <openssl/evp.h>
 
-#define NUM_ITERATIONS 1000 /* Used to measure time */
+#define NUM_ITERATIONS 1000
 
 /* ===================== Utilities ===================== */
 
@@ -50,14 +51,6 @@ int load_file(const char *path, unsigned char **buf, size_t *len) {
     *buf = data;
     *len = (size_t)size;
     return 0;
-}
-
-void sha256(const uint8_t *msg, size_t len, uint8_t out[32]) {
-    EVP_MD_CTX *ctx = EVP_MD_CTX_new();
-    EVP_DigestInit_ex(ctx, EVP_sha256(), NULL);
-    EVP_DigestUpdate(ctx, msg, len);
-    EVP_DigestFinal_ex(ctx, out, NULL);
-    EVP_MD_CTX_free(ctx);
 }
 
 static inline double now_seconds(void) {
@@ -156,7 +149,7 @@ scheme_t select_scheme_from_terminal(void) {
         return -1;
 
     if (choice == 0)
-        return -1;  // exit signal
+        return -1;
 
     return (scheme_t)(choice - 1);
 }
@@ -168,7 +161,6 @@ void evaluate_scheme(const scheme_def_t *s, const uint8_t hash[32]) {
     size_t len1 = 0, len2 = 0;
 
     double t_start, t_end;
-    double sign_time, verify_time;
 
     printf("\nScheme: %s\n", s->name);
 
@@ -187,22 +179,10 @@ void evaluate_scheme(const scheme_def_t *s, const uint8_t hash[32]) {
             s->pq->sign(hash, 32, &sig2, &len2);
     }
     t_end = now_seconds();
-    sign_time = (t_end - t_start) / NUM_ITERATIONS;
-
-    t_start = now_seconds();
-    for (int i = 0; i < NUM_ITERATIONS; i++) {
-        int ok = 0;
-        if (s->classical)
-            ok |= s->classical->verify(hash, 32, sig1, len1);
-        if (s->pq)
-            ok |= s->pq->verify(hash, 32, sig2, len2);
-    }
-    t_end = now_seconds();
-    verify_time = (t_end - t_start) / NUM_ITERATIONS;
 
     printf("Signature size (bytes): %zu\n", len1 + len2);
-    printf("Avg signing time (ms): %.6f\n", sign_time * 1000.0);
-    printf("Avg verification time (ms): %.6f\n", verify_time * 1000.0);
+    printf("Avg signing time (ms): %.6f\n",
+           ((t_end - t_start) / NUM_ITERATIONS) * 1000.0);
 
     free(sig1);
     free(sig2);
@@ -211,8 +191,8 @@ void evaluate_scheme(const scheme_def_t *s, const uint8_t hash[32]) {
 }
 
 /* ===================== Main ===================== */
-int main(void) {
 
+int main(void) {
     unsigned char *manifest = NULL;
     size_t manifest_len = 0;
 
@@ -226,16 +206,10 @@ int main(void) {
 
     while (1) {
         scheme_t selected = select_scheme_from_terminal();
-        if (selected < 0) {
-            printf("Exiting.\n");
-            break;
-        }
+        if (selected < 0) break;
 
         const scheme_def_t *scheme = get_scheme_def(selected);
-        if (!scheme) {
-            printf("Invalid scheme selection\n");
-            continue;
-        }
+        if (!scheme) continue;
 
         evaluate_scheme(scheme, hash);
     }
