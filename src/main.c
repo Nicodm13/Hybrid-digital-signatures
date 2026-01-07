@@ -40,6 +40,18 @@ int main(void) {
 
     printf("Hybrid verification SUCCESS\n");
 
+    /* Tamper with the image */
+    img.data[0] ^= 0x01;   // flip a single bit
+
+    /* Hybrid verify image */
+    if (hybrid_verify_image(img.data, img.len, &sig) != 1) {
+        fprintf(stderr, "Hybrid verification FAILED (tampering detected, expected)\n");
+        image_buffer_free(&img);
+        return 0;
+    }
+
+    printf("Hybrid verification SUCCESS (this should NOT happen)\n");
+
     image_buffer_free(&img);
     return 0;
 }
