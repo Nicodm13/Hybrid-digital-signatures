@@ -13,7 +13,7 @@
 #include <time.h>
 #include <openssl/evp.h>
 
-#define NUM_ITERATIONS 1000 // Used to measure time
+#define NUM_ITERATIONS 1000 /* Used to measure time */
 
 /* ===================== Utilities ===================== */
 

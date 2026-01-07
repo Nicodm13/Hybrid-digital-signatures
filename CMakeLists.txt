@@ -15,6 +15,8 @@ add_executable(2025_System_and_Network_Security
         src/signatures/rsa_pss_sig.c
         src/pq-signatures/falcon_sig.c
         include/scheme.h
+        include/image_buffer.h
+        src/image_buffer.c
 )
 
 target_include_directories(2025_System_and_Network_Security
