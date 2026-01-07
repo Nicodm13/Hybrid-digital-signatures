@@ -54,9 +54,19 @@ int hybrid_sign_image(
             falcon_sign_hash(hash, HASH_LEN, &sig2, &sig2_len);
             break;
 
+        case SCHEME_RSA_PSS_SPHINCS:
+            rsa_pss_sign_hash(hash, HASH_LEN, &sig1, &sig1_len);
+            sphincs_sign_hash(hash, HASH_LEN, &sig2, &sig2_len);
+            break;
+
         case SCHEME_RSA_PSS_ML_DSA:
             rsa_pss_sign_hash(hash, HASH_LEN, &sig1, &sig1_len);
             dilithium_sign_hash(hash, HASH_LEN, &sig2, &sig2_len);
+            break;
+
+        case SCHEME_RSA_PSS_FALCON:
+            rsa_pss_sign_hash(hash, HASH_LEN, &sig1, &sig1_len);
+            falcon_sign_hash(hash, HASH_LEN, &sig2, &sig2_len);
             break;
 
         default:
