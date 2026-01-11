@@ -24,4 +24,6 @@ int  image_buffer_load_file(image_buffer_t *buf, const char *path);
 /* Mark as ready / reset length (simulates capture lifecycle). */
 void image_buffer_reset(image_buffer_t *buf);
 
+int image_buffer_capture_mjpeg(image_buffer_t *buf, const char *device, int width, int height);
+
 #endif

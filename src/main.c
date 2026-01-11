@@ -14,11 +14,17 @@ int main(void) {
     }
 
     /* Load test image */
-    if (image_buffer_load_file(&img, "../test.png") != 0) {
+    /*if (image_buffer_load_file(&img, "../test.png") != 0) {
         fprintf(stderr, "Failed to load test.png\n");
         image_buffer_free(&img);
         return 1;
+    }*/
+    if (image_buffer_capture_mjpeg(&img, "/dev/video0", 1280, 720) != 0) {
+        fprintf(stderr, "Failed to capture from webcam\n");
+        image_buffer_free(&img);
+        return 1;
     }
+
 
     printf("Loaded image: %zu bytes\n", img.len);
 
