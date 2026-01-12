@@ -65,6 +65,7 @@ CMAKE_BINARY_DIR = "/mnt/c/Development/School/2025 System- and Network Security/
 # The main recursive "all" target.
 all: CMakeFiles/hybrid_app.dir/all
 all: CMakeFiles/server.dir/all
+all: CMakeFiles/verify.dir/all
 all: CMakeFiles/benchmark.dir/all
 .PHONY : all
 
@@ -75,6 +76,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/hybrid_app.dir/clean
 clean: CMakeFiles/server.dir/clean
+clean: CMakeFiles/verify.dir/clean
 clean: CMakeFiles/benchmark.dir/clean
 .PHONY : clean
 
@@ -129,6 +131,32 @@ server: CMakeFiles/server.dir/rule
 CMakeFiles/server.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/clean
 .PHONY : CMakeFiles/server.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/verify.dir
+
+# All Build rule for target.
+CMakeFiles/verify.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=22,23,24,25,26,27,28,29,30 "Built target verify"
+.PHONY : CMakeFiles/verify.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/verify.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" 9
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/verify.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" 0
+.PHONY : CMakeFiles/verify.dir/rule
+
+# Convenience name for target.
+verify: CMakeFiles/verify.dir/rule
+.PHONY : verify
+
+# clean rule for target.
+CMakeFiles/verify.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/clean
+.PHONY : CMakeFiles/verify.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/benchmark.dir

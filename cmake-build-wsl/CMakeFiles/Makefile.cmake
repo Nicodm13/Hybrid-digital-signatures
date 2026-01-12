@@ -46,5 +46,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/hybrid_app.dir/DependInfo.cmake"
   "CMakeFiles/server.dir/DependInfo.cmake"
+  "CMakeFiles/verify.dir/DependInfo.cmake"
   "CMakeFiles/benchmark.dir/DependInfo.cmake"
   )

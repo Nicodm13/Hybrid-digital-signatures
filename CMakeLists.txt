@@ -47,6 +47,28 @@ target_link_libraries(server
         pthread
 )
 
+# Verify executable
+add_executable(verify
+        src/verify.c
+        src/hybrid_signature.c
+        src/hash.c
+        src/signatures/ecdsa_sig.c
+        src/signatures/rsa_pss_sig.c
+        src/pq-signatures/dilithium_sig.c
+        src/pq-signatures/falcon_sig.c
+        src/pq-signatures/sphincs_sig.c
+)
+
+target_include_directories(verify
+        PRIVATE
+        ${PROJECT_SOURCE_DIR}/include
+)
+
+target_link_libraries(verify
+        OpenSSL::Crypto
+        ${OQS_LIB}
+)
+
 # Benchmark executable
 add_executable(benchmark
         src/benchmark.c

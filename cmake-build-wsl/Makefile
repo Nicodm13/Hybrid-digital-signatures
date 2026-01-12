@@ -143,6 +143,19 @@ server/fast:
 .PHONY : server/fast
 
 #=============================================================================
+# Target rules for targets named verify
+
+# Build rule for target.
+verify: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 verify
+.PHONY : verify
+
+# fast build rule for target.
+verify/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/build
+.PHONY : verify/fast
+
+#=============================================================================
 # Target rules for targets named benchmark
 
 # Build rule for target.
@@ -185,6 +198,7 @@ src/hash.o: src/hash.c.o
 # target to build an object file
 src/hash.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/hash.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/hash.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/hash.c.o
 .PHONY : src/hash.c.o
 
@@ -194,6 +208,7 @@ src/hash.i: src/hash.c.i
 # target to preprocess a source file
 src/hash.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/hash.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/hash.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/hash.c.i
 .PHONY : src/hash.c.i
 
@@ -203,6 +218,7 @@ src/hash.s: src/hash.c.s
 # target to generate assembly for a file
 src/hash.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/hash.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/hash.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/hash.c.s
 .PHONY : src/hash.c.s
 
@@ -212,6 +228,7 @@ src/hybrid_signature.o: src/hybrid_signature.c.o
 # target to build an object file
 src/hybrid_signature.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/hybrid_signature.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/hybrid_signature.c.o
 .PHONY : src/hybrid_signature.c.o
 
 src/hybrid_signature.i: src/hybrid_signature.c.i
@@ -220,6 +237,7 @@ src/hybrid_signature.i: src/hybrid_signature.c.i
 # target to preprocess a source file
 src/hybrid_signature.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/hybrid_signature.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/hybrid_signature.c.i
 .PHONY : src/hybrid_signature.c.i
 
 src/hybrid_signature.s: src/hybrid_signature.c.s
@@ -228,6 +246,7 @@ src/hybrid_signature.s: src/hybrid_signature.c.s
 # target to generate assembly for a file
 src/hybrid_signature.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/hybrid_signature.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/hybrid_signature.c.s
 .PHONY : src/hybrid_signature.c.s
 
 src/image_buffer.o: src/image_buffer.c.o
@@ -308,6 +327,7 @@ src/pq-signatures/dilithium_sig.o: src/pq-signatures/dilithium_sig.c.o
 # target to build an object file
 src/pq-signatures/dilithium_sig.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/dilithium_sig.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/pq-signatures/dilithium_sig.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/dilithium_sig.c.o
 .PHONY : src/pq-signatures/dilithium_sig.c.o
 
@@ -317,6 +337,7 @@ src/pq-signatures/dilithium_sig.i: src/pq-signatures/dilithium_sig.c.i
 # target to preprocess a source file
 src/pq-signatures/dilithium_sig.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/dilithium_sig.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/pq-signatures/dilithium_sig.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/dilithium_sig.c.i
 .PHONY : src/pq-signatures/dilithium_sig.c.i
 
@@ -326,6 +347,7 @@ src/pq-signatures/dilithium_sig.s: src/pq-signatures/dilithium_sig.c.s
 # target to generate assembly for a file
 src/pq-signatures/dilithium_sig.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/dilithium_sig.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/pq-signatures/dilithium_sig.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/dilithium_sig.c.s
 .PHONY : src/pq-signatures/dilithium_sig.c.s
 
@@ -335,6 +357,7 @@ src/pq-signatures/falcon_sig.o: src/pq-signatures/falcon_sig.c.o
 # target to build an object file
 src/pq-signatures/falcon_sig.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/falcon_sig.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/pq-signatures/falcon_sig.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/falcon_sig.c.o
 .PHONY : src/pq-signatures/falcon_sig.c.o
 
@@ -344,6 +367,7 @@ src/pq-signatures/falcon_sig.i: src/pq-signatures/falcon_sig.c.i
 # target to preprocess a source file
 src/pq-signatures/falcon_sig.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/falcon_sig.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/pq-signatures/falcon_sig.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/falcon_sig.c.i
 .PHONY : src/pq-signatures/falcon_sig.c.i
 
@@ -353,6 +377,7 @@ src/pq-signatures/falcon_sig.s: src/pq-signatures/falcon_sig.c.s
 # target to generate assembly for a file
 src/pq-signatures/falcon_sig.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/falcon_sig.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/pq-signatures/falcon_sig.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/falcon_sig.c.s
 .PHONY : src/pq-signatures/falcon_sig.c.s
 
@@ -362,6 +387,7 @@ src/pq-signatures/sphincs_sig.o: src/pq-signatures/sphincs_sig.c.o
 # target to build an object file
 src/pq-signatures/sphincs_sig.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/sphincs_sig.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/pq-signatures/sphincs_sig.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/sphincs_sig.c.o
 .PHONY : src/pq-signatures/sphincs_sig.c.o
 
@@ -371,6 +397,7 @@ src/pq-signatures/sphincs_sig.i: src/pq-signatures/sphincs_sig.c.i
 # target to preprocess a source file
 src/pq-signatures/sphincs_sig.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/sphincs_sig.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/pq-signatures/sphincs_sig.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/sphincs_sig.c.i
 .PHONY : src/pq-signatures/sphincs_sig.c.i
 
@@ -380,6 +407,7 @@ src/pq-signatures/sphincs_sig.s: src/pq-signatures/sphincs_sig.c.s
 # target to generate assembly for a file
 src/pq-signatures/sphincs_sig.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/sphincs_sig.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/pq-signatures/sphincs_sig.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/sphincs_sig.c.s
 .PHONY : src/pq-signatures/sphincs_sig.c.s
 
@@ -413,6 +441,7 @@ src/signatures/ecdsa_sig.o: src/signatures/ecdsa_sig.c.o
 # target to build an object file
 src/signatures/ecdsa_sig.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/signatures/ecdsa_sig.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/signatures/ecdsa_sig.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/signatures/ecdsa_sig.c.o
 .PHONY : src/signatures/ecdsa_sig.c.o
 
@@ -422,6 +451,7 @@ src/signatures/ecdsa_sig.i: src/signatures/ecdsa_sig.c.i
 # target to preprocess a source file
 src/signatures/ecdsa_sig.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/signatures/ecdsa_sig.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/signatures/ecdsa_sig.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/signatures/ecdsa_sig.c.i
 .PHONY : src/signatures/ecdsa_sig.c.i
 
@@ -431,6 +461,7 @@ src/signatures/ecdsa_sig.s: src/signatures/ecdsa_sig.c.s
 # target to generate assembly for a file
 src/signatures/ecdsa_sig.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/signatures/ecdsa_sig.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/signatures/ecdsa_sig.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/signatures/ecdsa_sig.c.s
 .PHONY : src/signatures/ecdsa_sig.c.s
 
@@ -440,6 +471,7 @@ src/signatures/rsa_pss_sig.o: src/signatures/rsa_pss_sig.c.o
 # target to build an object file
 src/signatures/rsa_pss_sig.c.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/signatures/rsa_pss_sig.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/signatures/rsa_pss_sig.c.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/signatures/rsa_pss_sig.c.o
 .PHONY : src/signatures/rsa_pss_sig.c.o
 
@@ -449,6 +481,7 @@ src/signatures/rsa_pss_sig.i: src/signatures/rsa_pss_sig.c.i
 # target to preprocess a source file
 src/signatures/rsa_pss_sig.c.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/signatures/rsa_pss_sig.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/signatures/rsa_pss_sig.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/signatures/rsa_pss_sig.c.i
 .PHONY : src/signatures/rsa_pss_sig.c.i
 
@@ -458,8 +491,33 @@ src/signatures/rsa_pss_sig.s: src/signatures/rsa_pss_sig.c.s
 # target to generate assembly for a file
 src/signatures/rsa_pss_sig.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/signatures/rsa_pss_sig.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/signatures/rsa_pss_sig.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/signatures/rsa_pss_sig.c.s
 .PHONY : src/signatures/rsa_pss_sig.c.s
+
+src/verify.o: src/verify.c.o
+.PHONY : src/verify.o
+
+# target to build an object file
+src/verify.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/verify.c.o
+.PHONY : src/verify.c.o
+
+src/verify.i: src/verify.c.i
+.PHONY : src/verify.i
+
+# target to preprocess a source file
+src/verify.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/verify.c.i
+.PHONY : src/verify.c.i
+
+src/verify.s: src/verify.c.s
+.PHONY : src/verify.s
+
+# target to generate assembly for a file
+src/verify.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/src/verify.c.s
+.PHONY : src/verify.c.s
 
 # Help Target
 help:
@@ -472,6 +530,7 @@ help:
 	@echo "... benchmark"
 	@echo "... hybrid_app"
 	@echo "... server"
+	@echo "... verify"
 	@echo "... src/benchmark.o"
 	@echo "... src/benchmark.i"
 	@echo "... src/benchmark.s"
@@ -508,6 +567,9 @@ help:
 	@echo "... src/signatures/rsa_pss_sig.o"
 	@echo "... src/signatures/rsa_pss_sig.i"
 	@echo "... src/signatures/rsa_pss_sig.s"
+	@echo "... src/verify.o"
+	@echo "... src/verify.i"
+	@echo "... src/verify.s"
 .PHONY : help
 
 
