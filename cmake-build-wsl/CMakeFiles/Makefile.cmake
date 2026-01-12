@@ -48,4 +48,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/server.dir/DependInfo.cmake"
   "CMakeFiles/verify.dir/DependInfo.cmake"
   "CMakeFiles/benchmark.dir/DependInfo.cmake"
+  "CMakeFiles/file_tamper.dir/DependInfo.cmake"
   )

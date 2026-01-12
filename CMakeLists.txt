@@ -69,6 +69,7 @@ target_link_libraries(verify
         ${OQS_LIB}
 )
 
+
 # Benchmark executable
 add_executable(benchmark
         src/benchmark.c
@@ -89,4 +90,14 @@ target_include_directories(benchmark
 target_link_libraries(benchmark
         OpenSSL::Crypto
         ${OQS_LIB}
+)
+
+# File tamper utility
+add_executable(file_tamper
+        src/file_tamper.c
+)
+
+target_include_directories(file_tamper
+        PRIVATE
+        ${PROJECT_SOURCE_DIR}/include
 )

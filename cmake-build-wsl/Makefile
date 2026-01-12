@@ -168,6 +168,19 @@ benchmark/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/build
 .PHONY : benchmark/fast
 
+#=============================================================================
+# Target rules for targets named file_tamper
+
+# Build rule for target.
+file_tamper: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 file_tamper
+.PHONY : file_tamper
+
+# fast build rule for target.
+file_tamper/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_tamper.dir/build.make CMakeFiles/file_tamper.dir/build
+.PHONY : file_tamper/fast
+
 src/benchmark.o: src/benchmark.c.o
 .PHONY : src/benchmark.o
 
@@ -191,6 +204,30 @@ src/benchmark.s: src/benchmark.c.s
 src/benchmark.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/benchmark.c.s
 .PHONY : src/benchmark.c.s
+
+src/file_tamper.o: src/file_tamper.c.o
+.PHONY : src/file_tamper.o
+
+# target to build an object file
+src/file_tamper.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_tamper.dir/build.make CMakeFiles/file_tamper.dir/src/file_tamper.c.o
+.PHONY : src/file_tamper.c.o
+
+src/file_tamper.i: src/file_tamper.c.i
+.PHONY : src/file_tamper.i
+
+# target to preprocess a source file
+src/file_tamper.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_tamper.dir/build.make CMakeFiles/file_tamper.dir/src/file_tamper.c.i
+.PHONY : src/file_tamper.c.i
+
+src/file_tamper.s: src/file_tamper.c.s
+.PHONY : src/file_tamper.s
+
+# target to generate assembly for a file
+src/file_tamper.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_tamper.dir/build.make CMakeFiles/file_tamper.dir/src/file_tamper.c.s
+.PHONY : src/file_tamper.c.s
 
 src/hash.o: src/hash.c.o
 .PHONY : src/hash.o
@@ -528,12 +565,16 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... benchmark"
+	@echo "... file_tamper"
 	@echo "... hybrid_app"
 	@echo "... server"
 	@echo "... verify"
 	@echo "... src/benchmark.o"
 	@echo "... src/benchmark.i"
 	@echo "... src/benchmark.s"
+	@echo "... src/file_tamper.o"
+	@echo "... src/file_tamper.i"
+	@echo "... src/file_tamper.s"
 	@echo "... src/hash.o"
 	@echo "... src/hash.i"
 	@echo "... src/hash.s"

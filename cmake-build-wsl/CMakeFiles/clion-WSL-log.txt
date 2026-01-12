@@ -1,4 +1,4 @@
 /usr/bin/cmake -G "Unix Makefiles" -S "/mnt/c/Development/School/2025 System- and Network Security" -B "/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl"
 -- Configuring done (0.0s)
--- Generating done (0.3s)
+-- Generating done (0.6s)
 -- Build files have been written to: /mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl

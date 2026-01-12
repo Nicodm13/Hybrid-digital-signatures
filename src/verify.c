@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <string.h>
 
 #include "config.h"
 #include "hybrid_signature.h"
@@ -14,7 +15,7 @@ int main(void)
         return 1;
     }
 
-    /* Get file size */
+    /* Determine total file size */
     if (fseek(f, 0, SEEK_END) != 0) {
         perror("fseek");
         fclose(f);
@@ -22,20 +23,14 @@ int main(void)
     }
 
     long file_size = ftell(f);
-    if (file_size < 0) {
-        perror("ftell");
+    if (file_size < 12) { /* header alone is 12 bytes */
+        fprintf(stderr, "Invalid file\n");
         fclose(f);
         return 1;
     }
     rewind(f);
 
-    if ((size_t)file_size <= sizeof(hybrid_signature_t)) {
-        fprintf(stderr, "Invalid file: too small to contain signature\n");
-        fclose(f);
-        return 1;
-    }
-
-    /* Read full file */
+    /* Read entire file into memory */
     uint8_t *buffer = malloc((size_t)file_size);
     if (!buffer) {
         perror("malloc");
@@ -51,21 +46,47 @@ int main(void)
     }
     fclose(f);
 
-    /* Split image and signature */
-    size_t image_len = (size_t)file_size - sizeof(hybrid_signature_t);
-    uint8_t *image = buffer;
-    hybrid_signature_t *sig =
-        (hybrid_signature_t *)(buffer + image_len);
+    /* Parse the fixed-size header */
+    const uint8_t *p = buffer;
 
-    /* Sanity check */
-    if (sig->len == 0 || sig->len > sizeof(sig->data)) {
-        fprintf(stderr, "Invalid signature structure\n");
+    uint32_t image_len;
+    uint32_t sig_len;
+    uint32_t pubkeys_len;
+
+    memcpy(&image_len,   p, 4); p += 4;
+    memcpy(&sig_len,     p, 4); p += 4;
+    memcpy(&pubkeys_len, p, 4); p += 4;
+
+    /* File length must match declared lengths */
+    size_t expected_size = 12 + image_len + sig_len + pubkeys_len;
+
+    if (expected_size != (size_t)file_size) {
+        fprintf(stderr, "Corrupt file (length mismatch)\n");
         free(buffer);
         return 1;
     }
 
-    /* Verify */
-    int ok = hybrid_verify_image(image, image_len, sig);
+    /* Split payload into its three logical components */
+
+    /* Raw image bytes (used for hashing) */
+    const uint8_t *image = p;
+    p += image_len;
+
+    /* Hybrid signature structure + signature data */
+    const hybrid_signature_t *sig = (const hybrid_signature_t *)p;
+    p += sig_len;
+
+    /* Public keys corresponding to the selected hybrid scheme */
+    const uint8_t *pubkeys = p;
+
+    /*  Verify the signature */
+    int ok = hybrid_verify_image(
+        image,
+        image_len,
+        sig,
+        pubkeys,
+        pubkeys_len
+    );
 
     free(buffer);
 
