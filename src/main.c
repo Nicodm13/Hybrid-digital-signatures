@@ -2,6 +2,7 @@
 
 #include "config.h"
 #include "image_buffer.h"
+#include "image_uploader.h"
 #include "hybrid_signature.h"
 
 int main(void) {
@@ -32,27 +33,13 @@ int main(void) {
 
     printf("Hybrid signature size: %zu bytes\n", sig.len);
 
-    /* Hybrid verify image */
-    if (hybrid_verify_image(img.data, img.len, &sig) != 1) {
-        fprintf(stderr, "Hybrid verification FAILED\n");
+    if (upload_signed_image(img.data, img.len, &sig) != 0) {
+        fprintf(stderr, "Failed to send signed image\n");
         image_buffer_free(&img);
         return 1;
     }
 
-    printf("Hybrid verification SUCCESS\n");
-
-    /* Tamper with image */
-    img.data[0] ^= 0x01;
-
-    /* Hybrid verify image */
-    if (hybrid_verify_image(img.data, img.len, &sig) != 1) {
-        fprintf(stderr,
-                "Hybrid verification FAILED (tampering detected, expected)\n");
-        image_buffer_free(&img);
-        return 0;
-    }
-
-    printf("Hybrid verification SUCCESS (this should NOT happen)\n");
+    printf("Hybrid signature sent");
 
     image_buffer_free(&img);
     return 0;

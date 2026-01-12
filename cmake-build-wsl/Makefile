@@ -130,6 +130,19 @@ hybrid_app/fast:
 .PHONY : hybrid_app/fast
 
 #=============================================================================
+# Target rules for targets named server
+
+# Build rule for target.
+server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 server
+.PHONY : server
+
+# fast build rule for target.
+server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
+.PHONY : server/fast
+
+#=============================================================================
 # Target rules for targets named benchmark
 
 # Build rule for target.
@@ -241,6 +254,30 @@ src/image_buffer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/image_buffer.c.s
 .PHONY : src/image_buffer.c.s
 
+src/image_uploader.o: src/image_uploader.c.o
+.PHONY : src/image_uploader.o
+
+# target to build an object file
+src/image_uploader.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/image_uploader.c.o
+.PHONY : src/image_uploader.c.o
+
+src/image_uploader.i: src/image_uploader.c.i
+.PHONY : src/image_uploader.i
+
+# target to preprocess a source file
+src/image_uploader.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/image_uploader.c.i
+.PHONY : src/image_uploader.c.i
+
+src/image_uploader.s: src/image_uploader.c.s
+.PHONY : src/image_uploader.s
+
+# target to generate assembly for a file
+src/image_uploader.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/image_uploader.c.s
+.PHONY : src/image_uploader.c.s
+
 src/main.o: src/main.c.o
 .PHONY : src/main.o
 
@@ -346,6 +383,30 @@ src/pq-signatures/sphincs_sig.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/sphincs_sig.c.s
 .PHONY : src/pq-signatures/sphincs_sig.c.s
 
+src/server.o: src/server.c.o
+.PHONY : src/server.o
+
+# target to build an object file
+src/server.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.c.o
+.PHONY : src/server.c.o
+
+src/server.i: src/server.c.i
+.PHONY : src/server.i
+
+# target to preprocess a source file
+src/server.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.c.i
+.PHONY : src/server.c.i
+
+src/server.s: src/server.c.s
+.PHONY : src/server.s
+
+# target to generate assembly for a file
+src/server.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.c.s
+.PHONY : src/server.c.s
+
 src/signatures/ecdsa_sig.o: src/signatures/ecdsa_sig.c.o
 .PHONY : src/signatures/ecdsa_sig.o
 
@@ -410,6 +471,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... benchmark"
 	@echo "... hybrid_app"
+	@echo "... server"
 	@echo "... src/benchmark.o"
 	@echo "... src/benchmark.i"
 	@echo "... src/benchmark.s"
@@ -422,6 +484,9 @@ help:
 	@echo "... src/image_buffer.o"
 	@echo "... src/image_buffer.i"
 	@echo "... src/image_buffer.s"
+	@echo "... src/image_uploader.o"
+	@echo "... src/image_uploader.i"
+	@echo "... src/image_uploader.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -434,6 +499,9 @@ help:
 	@echo "... src/pq-signatures/sphincs_sig.o"
 	@echo "... src/pq-signatures/sphincs_sig.i"
 	@echo "... src/pq-signatures/sphincs_sig.s"
+	@echo "... src/server.o"
+	@echo "... src/server.i"
+	@echo "... src/server.s"
 	@echo "... src/signatures/ecdsa_sig.o"
 	@echo "... src/signatures/ecdsa_sig.i"
 	@echo "... src/signatures/ecdsa_sig.s"

@@ -8,7 +8,7 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 find_package(OpenSSL REQUIRED)
 find_library(OQS_LIB oqs REQUIRED)
 
-# Hybrid image signing app
+# Hybrid image signing
 add_executable(hybrid_app
         src/main.c
         src/image_buffer.c
@@ -19,6 +19,7 @@ add_executable(hybrid_app
         src/pq-signatures/dilithium_sig.c
         src/pq-signatures/falcon_sig.c
         src/pq-signatures/sphincs_sig.c
+        src/image_uploader.c
 )
 
 target_include_directories(hybrid_app
@@ -29,6 +30,21 @@ target_include_directories(hybrid_app
 target_link_libraries(hybrid_app
         OpenSSL::Crypto
         ${OQS_LIB}
+        curl
+)
+
+# Upload server
+add_executable(server
+        src/server.c
+)
+
+target_include_directories(server
+        PRIVATE
+        ${PROJECT_SOURCE_DIR}/include
+)
+
+target_link_libraries(server
+        pthread
 )
 
 # Benchmark executable
@@ -40,6 +56,7 @@ add_executable(benchmark
         src/pq-signatures/dilithium_sig.c
         src/pq-signatures/falcon_sig.c
         src/pq-signatures/sphincs_sig.c
+        include/image_uploader.h
 )
 
 target_include_directories(benchmark
