@@ -153,6 +153,62 @@ CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/falcon_sig.c.s
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/falcon_sig.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Development/School/2025 System- and Network Security/src/pq-signatures/falcon_sig.c" -o CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/falcon_sig.c.s
 
+CMakeFiles/2025_System_and_Network_Security.dir/src/image_buffer.c.o: CMakeFiles/2025_System_and_Network_Security.dir/flags.make
+CMakeFiles/2025_System_and_Network_Security.dir/src/image_buffer.c.o: /mnt/c/Development/School/2025\ System-\ and\ Network\ Security/src/image_buffer.c
+CMakeFiles/2025_System_and_Network_Security.dir/src/image_buffer.c.o: CMakeFiles/2025_System_and_Network_Security.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/2025_System_and_Network_Security.dir/src/image_buffer.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/2025_System_and_Network_Security.dir/src/image_buffer.c.o -MF CMakeFiles/2025_System_and_Network_Security.dir/src/image_buffer.c.o.d -o CMakeFiles/2025_System_and_Network_Security.dir/src/image_buffer.c.o -c "/mnt/c/Development/School/2025 System- and Network Security/src/image_buffer.c"
+
+CMakeFiles/2025_System_and_Network_Security.dir/src/image_buffer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/2025_System_and_Network_Security.dir/src/image_buffer.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/mnt/c/Development/School/2025 System- and Network Security/src/image_buffer.c" > CMakeFiles/2025_System_and_Network_Security.dir/src/image_buffer.c.i
+
+CMakeFiles/2025_System_and_Network_Security.dir/src/image_buffer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/2025_System_and_Network_Security.dir/src/image_buffer.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Development/School/2025 System- and Network Security/src/image_buffer.c" -o CMakeFiles/2025_System_and_Network_Security.dir/src/image_buffer.c.s
+
+CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_signature.c.o: CMakeFiles/2025_System_and_Network_Security.dir/flags.make
+CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_signature.c.o: /mnt/c/Development/School/2025\ System-\ and\ Network\ Security/src/hybrid_signature.c
+CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_signature.c.o: CMakeFiles/2025_System_and_Network_Security.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_signature.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_signature.c.o -MF CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_signature.c.o.d -o CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_signature.c.o -c "/mnt/c/Development/School/2025 System- and Network Security/src/hybrid_signature.c"
+
+CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_signature.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_signature.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/mnt/c/Development/School/2025 System- and Network Security/src/hybrid_signature.c" > CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_signature.c.i
+
+CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_signature.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_signature.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Development/School/2025 System- and Network Security/src/hybrid_signature.c" -o CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_signature.c.s
+
+CMakeFiles/2025_System_and_Network_Security.dir/src/hash.c.o: CMakeFiles/2025_System_and_Network_Security.dir/flags.make
+CMakeFiles/2025_System_and_Network_Security.dir/src/hash.c.o: /mnt/c/Development/School/2025\ System-\ and\ Network\ Security/src/hash.c
+CMakeFiles/2025_System_and_Network_Security.dir/src/hash.c.o: CMakeFiles/2025_System_and_Network_Security.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/2025_System_and_Network_Security.dir/src/hash.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/2025_System_and_Network_Security.dir/src/hash.c.o -MF CMakeFiles/2025_System_and_Network_Security.dir/src/hash.c.o.d -o CMakeFiles/2025_System_and_Network_Security.dir/src/hash.c.o -c "/mnt/c/Development/School/2025 System- and Network Security/src/hash.c"
+
+CMakeFiles/2025_System_and_Network_Security.dir/src/hash.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/2025_System_and_Network_Security.dir/src/hash.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/mnt/c/Development/School/2025 System- and Network Security/src/hash.c" > CMakeFiles/2025_System_and_Network_Security.dir/src/hash.c.i
+
+CMakeFiles/2025_System_and_Network_Security.dir/src/hash.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/2025_System_and_Network_Security.dir/src/hash.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Development/School/2025 System- and Network Security/src/hash.c" -o CMakeFiles/2025_System_and_Network_Security.dir/src/hash.c.s
+
+CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.o: CMakeFiles/2025_System_and_Network_Security.dir/flags.make
+CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.o: /mnt/c/Development/School/2025\ System-\ and\ Network\ Security/src/main.c
+CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.o: CMakeFiles/2025_System_and_Network_Security.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.o -MF CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.o.d -o CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.o -c "/mnt/c/Development/School/2025 System- and Network Security/src/main.c"
+
+CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/mnt/c/Development/School/2025 System- and Network Security/src/main.c" > CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.i
+
+CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/mnt/c/Development/School/2025 System- and Network Security/src/main.c" -o CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.s
+
 # Object files for target 2025_System_and_Network_Security
 2025_System_and_Network_Security_OBJECTS = \
 "CMakeFiles/2025_System_and_Network_Security.dir/src/benchmark.c.o" \
@@ -160,7 +216,11 @@ CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/falcon_sig.c.s
 "CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/dilithium_sig.c.o" \
 "CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/sphincs_sig.c.o" \
 "CMakeFiles/2025_System_and_Network_Security.dir/src/signatures/rsa_pss_sig.c.o" \
-"CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/falcon_sig.c.o"
+"CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/falcon_sig.c.o" \
+"CMakeFiles/2025_System_and_Network_Security.dir/src/image_buffer.c.o" \
+"CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_signature.c.o" \
+"CMakeFiles/2025_System_and_Network_Security.dir/src/hash.c.o" \
+"CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.o"
 
 # External object files for target 2025_System_and_Network_Security
 2025_System_and_Network_Security_EXTERNAL_OBJECTS =
@@ -171,10 +231,14 @@ CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/falcon_sig.c.s
 2025_System_and_Network_Security: CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/sphincs_sig.c.o
 2025_System_and_Network_Security: CMakeFiles/2025_System_and_Network_Security.dir/src/signatures/rsa_pss_sig.c.o
 2025_System_and_Network_Security: CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/falcon_sig.c.o
+2025_System_and_Network_Security: CMakeFiles/2025_System_and_Network_Security.dir/src/image_buffer.c.o
+2025_System_and_Network_Security: CMakeFiles/2025_System_and_Network_Security.dir/src/hybrid_signature.c.o
+2025_System_and_Network_Security: CMakeFiles/2025_System_and_Network_Security.dir/src/hash.c.o
+2025_System_and_Network_Security: CMakeFiles/2025_System_and_Network_Security.dir/src/main.c.o
 2025_System_and_Network_Security: CMakeFiles/2025_System_and_Network_Security.dir/build.make
 2025_System_and_Network_Security: /usr/lib/x86_64-linux-gnu/libcrypto.so
 2025_System_and_Network_Security: CMakeFiles/2025_System_and_Network_Security.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable 2025_System_and_Network_Security"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking C executable 2025_System_and_Network_Security"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/2025_System_and_Network_Security.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

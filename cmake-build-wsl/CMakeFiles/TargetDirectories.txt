@@ -1,3 +1,4 @@
-/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles/2025_System_and_Network_Security.dir
+/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles/hybrid_app.dir
+/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles/benchmark.dir
 /mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles/edit_cache.dir
 /mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles/rebuild_cache.dir

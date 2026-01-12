@@ -117,24 +117,37 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named 2025_System_and_Network_Security
+# Target rules for targets named hybrid_app
 
 # Build rule for target.
-2025_System_and_Network_Security: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 2025_System_and_Network_Security
-.PHONY : 2025_System_and_Network_Security
+hybrid_app: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hybrid_app
+.PHONY : hybrid_app
 
 # fast build rule for target.
-2025_System_and_Network_Security/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/build
-.PHONY : 2025_System_and_Network_Security/fast
+hybrid_app/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/build
+.PHONY : hybrid_app/fast
+
+#=============================================================================
+# Target rules for targets named benchmark
+
+# Build rule for target.
+benchmark: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 benchmark
+.PHONY : benchmark
+
+# fast build rule for target.
+benchmark/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/build
+.PHONY : benchmark/fast
 
 src/benchmark.o: src/benchmark.c.o
 .PHONY : src/benchmark.o
 
 # target to build an object file
 src/benchmark.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/benchmark.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/benchmark.c.o
 .PHONY : src/benchmark.c.o
 
 src/benchmark.i: src/benchmark.c.i
@@ -142,7 +155,7 @@ src/benchmark.i: src/benchmark.c.i
 
 # target to preprocess a source file
 src/benchmark.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/benchmark.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/benchmark.c.i
 .PHONY : src/benchmark.c.i
 
 src/benchmark.s: src/benchmark.c.s
@@ -150,15 +163,115 @@ src/benchmark.s: src/benchmark.c.s
 
 # target to generate assembly for a file
 src/benchmark.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/benchmark.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/benchmark.c.s
 .PHONY : src/benchmark.c.s
+
+src/hash.o: src/hash.c.o
+.PHONY : src/hash.o
+
+# target to build an object file
+src/hash.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/hash.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/hash.c.o
+.PHONY : src/hash.c.o
+
+src/hash.i: src/hash.c.i
+.PHONY : src/hash.i
+
+# target to preprocess a source file
+src/hash.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/hash.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/hash.c.i
+.PHONY : src/hash.c.i
+
+src/hash.s: src/hash.c.s
+.PHONY : src/hash.s
+
+# target to generate assembly for a file
+src/hash.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/hash.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/hash.c.s
+.PHONY : src/hash.c.s
+
+src/hybrid_signature.o: src/hybrid_signature.c.o
+.PHONY : src/hybrid_signature.o
+
+# target to build an object file
+src/hybrid_signature.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/hybrid_signature.c.o
+.PHONY : src/hybrid_signature.c.o
+
+src/hybrid_signature.i: src/hybrid_signature.c.i
+.PHONY : src/hybrid_signature.i
+
+# target to preprocess a source file
+src/hybrid_signature.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/hybrid_signature.c.i
+.PHONY : src/hybrid_signature.c.i
+
+src/hybrid_signature.s: src/hybrid_signature.c.s
+.PHONY : src/hybrid_signature.s
+
+# target to generate assembly for a file
+src/hybrid_signature.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/hybrid_signature.c.s
+.PHONY : src/hybrid_signature.c.s
+
+src/image_buffer.o: src/image_buffer.c.o
+.PHONY : src/image_buffer.o
+
+# target to build an object file
+src/image_buffer.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/image_buffer.c.o
+.PHONY : src/image_buffer.c.o
+
+src/image_buffer.i: src/image_buffer.c.i
+.PHONY : src/image_buffer.i
+
+# target to preprocess a source file
+src/image_buffer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/image_buffer.c.i
+.PHONY : src/image_buffer.c.i
+
+src/image_buffer.s: src/image_buffer.c.s
+.PHONY : src/image_buffer.s
+
+# target to generate assembly for a file
+src/image_buffer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/image_buffer.c.s
+.PHONY : src/image_buffer.c.s
+
+src/main.o: src/main.c.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/main.c.o
+.PHONY : src/main.c.o
+
+src/main.i: src/main.c.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/main.c.i
+.PHONY : src/main.c.i
+
+src/main.s: src/main.c.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/main.c.s
+.PHONY : src/main.c.s
 
 src/pq-signatures/dilithium_sig.o: src/pq-signatures/dilithium_sig.c.o
 .PHONY : src/pq-signatures/dilithium_sig.o
 
 # target to build an object file
 src/pq-signatures/dilithium_sig.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/dilithium_sig.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/dilithium_sig.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/dilithium_sig.c.o
 .PHONY : src/pq-signatures/dilithium_sig.c.o
 
 src/pq-signatures/dilithium_sig.i: src/pq-signatures/dilithium_sig.c.i
@@ -166,7 +279,8 @@ src/pq-signatures/dilithium_sig.i: src/pq-signatures/dilithium_sig.c.i
 
 # target to preprocess a source file
 src/pq-signatures/dilithium_sig.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/dilithium_sig.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/dilithium_sig.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/dilithium_sig.c.i
 .PHONY : src/pq-signatures/dilithium_sig.c.i
 
 src/pq-signatures/dilithium_sig.s: src/pq-signatures/dilithium_sig.c.s
@@ -174,7 +288,8 @@ src/pq-signatures/dilithium_sig.s: src/pq-signatures/dilithium_sig.c.s
 
 # target to generate assembly for a file
 src/pq-signatures/dilithium_sig.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/dilithium_sig.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/dilithium_sig.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/dilithium_sig.c.s
 .PHONY : src/pq-signatures/dilithium_sig.c.s
 
 src/pq-signatures/falcon_sig.o: src/pq-signatures/falcon_sig.c.o
@@ -182,7 +297,8 @@ src/pq-signatures/falcon_sig.o: src/pq-signatures/falcon_sig.c.o
 
 # target to build an object file
 src/pq-signatures/falcon_sig.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/falcon_sig.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/falcon_sig.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/falcon_sig.c.o
 .PHONY : src/pq-signatures/falcon_sig.c.o
 
 src/pq-signatures/falcon_sig.i: src/pq-signatures/falcon_sig.c.i
@@ -190,7 +306,8 @@ src/pq-signatures/falcon_sig.i: src/pq-signatures/falcon_sig.c.i
 
 # target to preprocess a source file
 src/pq-signatures/falcon_sig.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/falcon_sig.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/falcon_sig.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/falcon_sig.c.i
 .PHONY : src/pq-signatures/falcon_sig.c.i
 
 src/pq-signatures/falcon_sig.s: src/pq-signatures/falcon_sig.c.s
@@ -198,7 +315,8 @@ src/pq-signatures/falcon_sig.s: src/pq-signatures/falcon_sig.c.s
 
 # target to generate assembly for a file
 src/pq-signatures/falcon_sig.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/falcon_sig.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/falcon_sig.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/falcon_sig.c.s
 .PHONY : src/pq-signatures/falcon_sig.c.s
 
 src/pq-signatures/sphincs_sig.o: src/pq-signatures/sphincs_sig.c.o
@@ -206,7 +324,8 @@ src/pq-signatures/sphincs_sig.o: src/pq-signatures/sphincs_sig.c.o
 
 # target to build an object file
 src/pq-signatures/sphincs_sig.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/sphincs_sig.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/sphincs_sig.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/sphincs_sig.c.o
 .PHONY : src/pq-signatures/sphincs_sig.c.o
 
 src/pq-signatures/sphincs_sig.i: src/pq-signatures/sphincs_sig.c.i
@@ -214,7 +333,8 @@ src/pq-signatures/sphincs_sig.i: src/pq-signatures/sphincs_sig.c.i
 
 # target to preprocess a source file
 src/pq-signatures/sphincs_sig.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/sphincs_sig.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/sphincs_sig.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/sphincs_sig.c.i
 .PHONY : src/pq-signatures/sphincs_sig.c.i
 
 src/pq-signatures/sphincs_sig.s: src/pq-signatures/sphincs_sig.c.s
@@ -222,7 +342,8 @@ src/pq-signatures/sphincs_sig.s: src/pq-signatures/sphincs_sig.c.s
 
 # target to generate assembly for a file
 src/pq-signatures/sphincs_sig.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/pq-signatures/sphincs_sig.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/pq-signatures/sphincs_sig.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/pq-signatures/sphincs_sig.c.s
 .PHONY : src/pq-signatures/sphincs_sig.c.s
 
 src/signatures/ecdsa_sig.o: src/signatures/ecdsa_sig.c.o
@@ -230,7 +351,8 @@ src/signatures/ecdsa_sig.o: src/signatures/ecdsa_sig.c.o
 
 # target to build an object file
 src/signatures/ecdsa_sig.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/signatures/ecdsa_sig.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/signatures/ecdsa_sig.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/signatures/ecdsa_sig.c.o
 .PHONY : src/signatures/ecdsa_sig.c.o
 
 src/signatures/ecdsa_sig.i: src/signatures/ecdsa_sig.c.i
@@ -238,7 +360,8 @@ src/signatures/ecdsa_sig.i: src/signatures/ecdsa_sig.c.i
 
 # target to preprocess a source file
 src/signatures/ecdsa_sig.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/signatures/ecdsa_sig.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/signatures/ecdsa_sig.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/signatures/ecdsa_sig.c.i
 .PHONY : src/signatures/ecdsa_sig.c.i
 
 src/signatures/ecdsa_sig.s: src/signatures/ecdsa_sig.c.s
@@ -246,7 +369,8 @@ src/signatures/ecdsa_sig.s: src/signatures/ecdsa_sig.c.s
 
 # target to generate assembly for a file
 src/signatures/ecdsa_sig.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/signatures/ecdsa_sig.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/signatures/ecdsa_sig.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/signatures/ecdsa_sig.c.s
 .PHONY : src/signatures/ecdsa_sig.c.s
 
 src/signatures/rsa_pss_sig.o: src/signatures/rsa_pss_sig.c.o
@@ -254,7 +378,8 @@ src/signatures/rsa_pss_sig.o: src/signatures/rsa_pss_sig.c.o
 
 # target to build an object file
 src/signatures/rsa_pss_sig.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/signatures/rsa_pss_sig.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/signatures/rsa_pss_sig.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/signatures/rsa_pss_sig.c.o
 .PHONY : src/signatures/rsa_pss_sig.c.o
 
 src/signatures/rsa_pss_sig.i: src/signatures/rsa_pss_sig.c.i
@@ -262,7 +387,8 @@ src/signatures/rsa_pss_sig.i: src/signatures/rsa_pss_sig.c.i
 
 # target to preprocess a source file
 src/signatures/rsa_pss_sig.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/signatures/rsa_pss_sig.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/signatures/rsa_pss_sig.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/signatures/rsa_pss_sig.c.i
 .PHONY : src/signatures/rsa_pss_sig.c.i
 
 src/signatures/rsa_pss_sig.s: src/signatures/rsa_pss_sig.c.s
@@ -270,7 +396,8 @@ src/signatures/rsa_pss_sig.s: src/signatures/rsa_pss_sig.c.s
 
 # target to generate assembly for a file
 src/signatures/rsa_pss_sig.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/2025_System_and_Network_Security.dir/build.make CMakeFiles/2025_System_and_Network_Security.dir/src/signatures/rsa_pss_sig.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/src/signatures/rsa_pss_sig.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/signatures/rsa_pss_sig.c.s
 .PHONY : src/signatures/rsa_pss_sig.c.s
 
 # Help Target
@@ -281,10 +408,23 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... 2025_System_and_Network_Security"
+	@echo "... benchmark"
+	@echo "... hybrid_app"
 	@echo "... src/benchmark.o"
 	@echo "... src/benchmark.i"
 	@echo "... src/benchmark.s"
+	@echo "... src/hash.o"
+	@echo "... src/hash.i"
+	@echo "... src/hash.s"
+	@echo "... src/hybrid_signature.o"
+	@echo "... src/hybrid_signature.i"
+	@echo "... src/hybrid_signature.s"
+	@echo "... src/image_buffer.o"
+	@echo "... src/image_buffer.i"
+	@echo "... src/image_buffer.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 	@echo "... src/pq-signatures/dilithium_sig.o"
 	@echo "... src/pq-signatures/dilithium_sig.i"
 	@echo "... src/pq-signatures/dilithium_sig.s"

@@ -6,4 +6,9 @@
 
 #define HYBRID_SCHEME ((scheme_t)SCHEME_ECDSA_ML_DSA)
 
+//#define IMAGE_INPUT_PATH "/home/pi/images/"
+//#define IMAGE_INPUT_NAME "image.png"
+#define IMAGE_INPUT_PATH "../"
+#define IMAGE_INPUT_NAME "test.png"
+
 #endif

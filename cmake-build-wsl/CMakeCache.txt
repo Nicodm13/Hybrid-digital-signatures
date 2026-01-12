@@ -207,6 +207,9 @@ OPENSSL_INCLUDE_DIR:PATH=/usr/include
 //Path to a library.
 OPENSSL_SSL_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libssl.so
 
+//Path to a library.
+OQS_LIB:FILEPATH=/usr/local/lib/liboqs.a
+
 //Arguments to supply to pkg-config
 PKG_CONFIG_ARGN:STRING=
 
