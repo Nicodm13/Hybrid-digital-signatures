@@ -238,6 +238,9 @@ LIB_EAY:FILEPATH=C:/Users/Nico2/Miniconda3/Library/lib/libcrypto.lib
 OPENSSL_INCLUDE_DIR:PATH=C:/Users/Nico2/Miniconda3/Library/include
 
 //Path to a library.
+OQS_LIB:FILEPATH=OQS_LIB-NOTFOUND
+
+//Path to a library.
 SSL_EAY:FILEPATH=C:/Users/Nico2/Miniconda3/Library/lib/libssl.lib
 
 

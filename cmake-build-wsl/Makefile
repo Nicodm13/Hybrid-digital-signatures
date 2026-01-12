@@ -117,19 +117,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named hybrid_app
-
-# Build rule for target.
-hybrid_app: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hybrid_app
-.PHONY : hybrid_app
-
-# fast build rule for target.
-hybrid_app/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/build
-.PHONY : hybrid_app/fast
-
-#=============================================================================
 # Target rules for targets named server
 
 # Build rule for target.
@@ -141,6 +128,19 @@ server: cmake_check_build_system
 server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
 .PHONY : server/fast
+
+#=============================================================================
+# Target rules for targets named hybrid_app
+
+# Build rule for target.
+hybrid_app: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hybrid_app
+.PHONY : hybrid_app
+
+# fast build rule for target.
+hybrid_app/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/build
+.PHONY : hybrid_app/fast
 
 #=============================================================================
 # Target rules for targets named verify
@@ -180,30 +180,6 @@ file_tamper: cmake_check_build_system
 file_tamper/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_tamper.dir/build.make CMakeFiles/file_tamper.dir/build
 .PHONY : file_tamper/fast
-
-src/benchmark.o: src/benchmark.c.o
-.PHONY : src/benchmark.o
-
-# target to build an object file
-src/benchmark.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/benchmark.c.o
-.PHONY : src/benchmark.c.o
-
-src/benchmark.i: src/benchmark.c.i
-.PHONY : src/benchmark.i
-
-# target to preprocess a source file
-src/benchmark.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/benchmark.c.i
-.PHONY : src/benchmark.c.i
-
-src/benchmark.s: src/benchmark.c.s
-.PHONY : src/benchmark.s
-
-# target to generate assembly for a file
-src/benchmark.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/src/benchmark.c.s
-.PHONY : src/benchmark.c.s
 
 src/file_tamper.o: src/file_tamper.c.o
 .PHONY : src/file_tamper.o
@@ -569,9 +545,6 @@ help:
 	@echo "... hybrid_app"
 	@echo "... server"
 	@echo "... verify"
-	@echo "... src/benchmark.o"
-	@echo "... src/benchmark.i"
-	@echo "... src/benchmark.s"
 	@echo "... src/file_tamper.o"
 	@echo "... src/file_tamper.i"
 	@echo "... src/file_tamper.s"

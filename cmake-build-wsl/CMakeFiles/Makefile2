@@ -63,8 +63,8 @@ CMAKE_BINARY_DIR = "/mnt/c/Development/School/2025 System- and Network Security/
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/hybrid_app.dir/all
 all: CMakeFiles/server.dir/all
+all: CMakeFiles/hybrid_app.dir/all
 all: CMakeFiles/verify.dir/all
 all: CMakeFiles/benchmark.dir/all
 all: CMakeFiles/file_tamper.dir/all
@@ -75,38 +75,12 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/hybrid_app.dir/clean
 clean: CMakeFiles/server.dir/clean
+clean: CMakeFiles/hybrid_app.dir/clean
 clean: CMakeFiles/verify.dir/clean
 clean: CMakeFiles/benchmark.dir/clean
 clean: CMakeFiles/file_tamper.dir/clean
 .PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/hybrid_app.dir
-
-# All Build rule for target.
-CMakeFiles/hybrid_app.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=11,12,13,14,15,16,17,18,19,20,21 "Built target hybrid_app"
-.PHONY : CMakeFiles/hybrid_app.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/hybrid_app.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" 11
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/hybrid_app.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" 0
-.PHONY : CMakeFiles/hybrid_app.dir/rule
-
-# Convenience name for target.
-hybrid_app: CMakeFiles/hybrid_app.dir/rule
-.PHONY : hybrid_app
-
-# clean rule for target.
-CMakeFiles/hybrid_app.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/clean
-.PHONY : CMakeFiles/hybrid_app.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/server.dir
@@ -115,7 +89,7 @@ CMakeFiles/hybrid_app.dir/clean:
 CMakeFiles/server.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=22,23 "Built target server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=21,22 "Built target server"
 .PHONY : CMakeFiles/server.dir/all
 
 # Build rule for subdir invocation for target.
@@ -135,13 +109,39 @@ CMakeFiles/server.dir/clean:
 .PHONY : CMakeFiles/server.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/hybrid_app.dir
+
+# All Build rule for target.
+CMakeFiles/hybrid_app.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=10,11,12,13,14,15,16,17,18,19,20 "Built target hybrid_app"
+.PHONY : CMakeFiles/hybrid_app.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/hybrid_app.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" 11
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/hybrid_app.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" 0
+.PHONY : CMakeFiles/hybrid_app.dir/rule
+
+# Convenience name for target.
+hybrid_app: CMakeFiles/hybrid_app.dir/rule
+.PHONY : hybrid_app
+
+# clean rule for target.
+CMakeFiles/hybrid_app.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/hybrid_app.dir/build.make CMakeFiles/hybrid_app.dir/clean
+.PHONY : CMakeFiles/hybrid_app.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/verify.dir
 
 # All Build rule for target.
 CMakeFiles/verify.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/verify.dir/build.make CMakeFiles/verify.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=24,25,26,27,28,29,30,31,32 "Built target verify"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=23,24,25,26,27,28,29,30,31 "Built target verify"
 .PHONY : CMakeFiles/verify.dir/all
 
 # Build rule for subdir invocation for target.
@@ -167,12 +167,12 @@ CMakeFiles/verify.dir/clean:
 CMakeFiles/benchmark.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark.dir/build.make CMakeFiles/benchmark.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8 "Built target benchmark"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=1,2,3,4,5,6,7 "Built target benchmark"
 .PHONY : CMakeFiles/benchmark.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/benchmark.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" 8
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/benchmark.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" 0
 .PHONY : CMakeFiles/benchmark.dir/rule
@@ -193,7 +193,7 @@ CMakeFiles/benchmark.dir/clean:
 CMakeFiles/file_tamper.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_tamper.dir/build.make CMakeFiles/file_tamper.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/file_tamper.dir/build.make CMakeFiles/file_tamper.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=9,10 "Built target file_tamper"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/mnt/c/Development/School/2025 System- and Network Security/cmake-build-wsl/CMakeFiles" --progress-num=8,9 "Built target file_tamper"
 .PHONY : CMakeFiles/file_tamper.dir/all
 
 # Build rule for subdir invocation for target.

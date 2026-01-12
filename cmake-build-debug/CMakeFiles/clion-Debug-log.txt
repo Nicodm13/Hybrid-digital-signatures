@@ -1,4 +1,6 @@
 "C:\Development\Tools\Jetbrains\CLion 2024.2.3\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Development/Tools/Jetbrains/CLion 2024.2.3/bin/ninja/win/x64/ninja.exe" -G Ninja -S "C:\Development\School\2025 System- and Network Security" -B "C:\Development\School\2025 System- and Network Security\cmake-build-debug"
--- Configuring done (0.2s)
--- Generating done (0.0s)
--- Build files have been written to: C:/Development/School/2025 System- and Network Security/cmake-build-debug
+CMake Error at CMakeLists.txt:11 (find_library):
+  Could not find OQS_LIB using the following names: oqs
+
+
+-- Configuring incomplete, errors occurred!

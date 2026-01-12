@@ -4,7 +4,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
-#define IMAGE_MAX_SIZE (5u * 1024u * 1024u)  /* adjust as needed */
+#define IMAGE_MAX_SIZE (5 * 1024 * 1024)  /* 5 MB safety cap */
 
 typedef struct {
     uint8_t *data;
@@ -12,16 +12,9 @@ typedef struct {
     size_t   cap;
 } image_buffer_t;
 
-/* Allocate once at startup. */
-int  image_buffer_init(image_buffer_t *buf, size_t cap);
-
-/* Free at shutdown. */
+int image_buffer_init(image_buffer_t *buf, size_t cap);
 void image_buffer_free(image_buffer_t *buf);
-
-/* “Fill” the buffer from a file (host substitute for camera DMA). */
-int  image_buffer_load_file(image_buffer_t *buf, const char *path);
-
-/* Mark as ready / reset length (simulates capture lifecycle). */
 void image_buffer_reset(image_buffer_t *buf);
+int image_capture(image_buffer_t *buf);
 
 #endif
