@@ -18,7 +18,6 @@
 
 #include "config.h"
 
-#define LISTEN_PORT 8000
 #define BUFFER_SIZE 4096
 
 int main(void)
@@ -31,8 +30,9 @@ int main(void)
     }
 #endif
 
-    socket_t server_fd, client_fd;
+    socket_t server_fd;
     struct sockaddr_in addr;
+
 #ifdef _WIN32
     int addrlen = sizeof(addr);
 #else
@@ -52,7 +52,7 @@ int main(void)
 
     addr.sin_family = AF_INET;
     addr.sin_addr.s_addr = htonl(INADDR_ANY);
-    addr.sin_port = htons(LISTEN_PORT);
+    addr.sin_port = htons(SERVER_PORT);
 
     if (bind(server_fd, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
         perror("bind");
@@ -60,89 +60,95 @@ int main(void)
         return 1;
     }
 
-    if (listen(server_fd, 1) < 0) {
+    if (listen(server_fd, 5) < 0) {
         perror("listen");
         close_socket(server_fd);
         return 1;
     }
 
-    printf("Listening on port %d...\n", LISTEN_PORT);
+    printf("Listening on port %d...\n", SERVER_PORT);
 
-    client_fd = accept(server_fd, (struct sockaddr *)&addr, &addrlen);
-    if (client_fd == (socket_t)-1) {
-        perror("accept");
-        close_socket(server_fd);
-        return 1;
-    }
-
-    char buffer[BUFFER_SIZE];
-    int received = 0;
-    int header_end = 0;
-    int content_length = 0;
-
-    /* Read HTTP headers */
-    while (!header_end) {
-        int r = recv(client_fd, buffer + received,
-                     BUFFER_SIZE - received, 0);
-        if (r <= 0) {
-            perror("recv");
-            close_socket(client_fd);
-            close_socket(server_fd);
-            return 1;
+    while (1) {
+        socket_t client_fd = accept(server_fd, (struct sockaddr *)&addr, &addrlen);
+        if (client_fd == (socket_t)-1) {
+            perror("accept");
+            continue;
         }
-        received += r;
 
-        char *end = strstr(buffer, "\r\n\r\n");
-        if (end) {
-            header_end = (int)(end - buffer) + 4;
+        char buffer[BUFFER_SIZE];
+        int received = 0;
+        int header_end = 0;
+        int content_length = 0;
 
-            char *cl = strstr(buffer, "Content-Length:");
-            if (!cl) {
-                fprintf(stderr, "No Content-Length header\n");
+        /* Read HTTP headers */
+        while (!header_end) {
+            int r = recv(client_fd,
+                         buffer + received,
+                         BUFFER_SIZE - received,
+                         0);
+            if (r <= 0) {
+                perror("recv");
                 close_socket(client_fd);
-                close_socket(server_fd);
-                return 1;
+                goto next_client;
             }
-            sscanf(cl, "Content-Length: %d", &content_length);
+
+            received += r;
+
+            char *end = strstr(buffer, "\r\n\r\n");
+            if (end) {
+                header_end = (int)(end - buffer) + 4;
+
+                char *cl = strstr(buffer, "Content-Length:");
+                if (!cl) {
+                    fprintf(stderr, "No Content-Length header\n");
+                    close_socket(client_fd);
+                    goto next_client;
+                }
+
+                sscanf(cl, "Content-Length: %d", &content_length);
+            }
         }
-    }
 
-    FILE *f = fopen(SERVER_STORAGE_PATH SERVER_STORAGE_NAME, "wb");
-    if (!f) {
-        perror("fopen");
+        FILE *f = fopen(SERVER_STORAGE_PATH SERVER_STORAGE_NAME, "wb");
+        if (!f) {
+            perror("fopen");
+            close_socket(client_fd);
+            goto next_client;
+        }
+
+        int body_received = received - header_end;
+        fwrite(buffer + header_end, 1, body_received, f);
+
+        while (body_received < content_length) {
+            int r = recv(client_fd, buffer, BUFFER_SIZE, 0);
+            if (r <= 0)
+                break;
+
+            fwrite(buffer, 1, r, f);
+            body_received += r;
+        }
+
+        fclose(f);
+
+        const char response[] =
+            "HTTP/1.1 200 OK\r\n"
+            "Content-Length: 2\r\n"
+            "\r\n"
+            "OK";
+
+        send(client_fd, response, sizeof(response) - 1, 0);
+
         close_socket(client_fd);
-        close_socket(server_fd);
-        return 1;
+        printf("Upload complete.\n");
+
+next_client:
+        ;
     }
-
-    int body_received = received - header_end;
-    fwrite(buffer + header_end, 1, body_received, f);
-
-    while (body_received < content_length) {
-        int r = recv(client_fd, buffer, BUFFER_SIZE, 0);
-        if (r <= 0)
-            break;
-        fwrite(buffer, 1, r, f);
-        body_received += r;
-    }
-
-    fclose(f);
-
-    const char response[] =
-        "HTTP/1.1 200 OK\r\n"
-        "Content-Length: 2\r\n"
-        "\r\n"
-        "OK";
-
-    send(client_fd, response, sizeof(response) - 1, 0);
-
-    close_socket(client_fd);
-    close_socket(server_fd);
 
 #ifdef _WIN32
     WSACleanup();
 #endif
 
-    printf("Upload complete.\n");
+    close_socket(server_fd);
     return 0;
 }

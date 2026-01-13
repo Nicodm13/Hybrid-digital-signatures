@@ -69,6 +69,16 @@ target_link_libraries(verify
         ${OQS_LIB}
 )
 
+# Extract image executable
+add_executable(extract_image
+        src/extract_image.c
+)
+
+target_include_directories(extract_image
+        PRIVATE
+        ${PROJECT_SOURCE_DIR}/include
+)
+
 # File tamper utility
 add_executable(file_tamper
         src/file_tamper.c
