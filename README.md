@@ -204,11 +204,11 @@ Edit `config.h`:
 
 ```bash
 cd build
-./server        # WSL only
-./hybrid_app    # Embedded system
-./verify        # Verifies the signature
-./extract_image # Extracts the image to a .png  
-./file_tamper   # Modifies the signed .bin file resulting in a false verification
+./server        # Starts the server (WSL only)
+./hybrid_app    # Captures and image and signs it (Embedded System only)
+./verify        # Verifies the signature (WSL only)
+./extract_image # Extracts the image to a .png  (WSL only)
+./file_tamper   # Modifies the signed .bin file resulting in a false verification (WSL only)
 ```
 
 ---
