@@ -6,8 +6,9 @@
 /* Hybrid Scheme selection */
 #define HYBRID_SCHEME ((scheme_t)SCHEME_ECDSA_ML_DSA)
 
-/* Upload endpoint */
-#define UPLOAD_URL "http://10.133.252.198:8000"
+/* Server endpoint (WSL) */
+#define SERVER_IP "10.133.252.198"
+#define SERVER_PORT 8000
 
 /* Server-side storage */
 #define SERVER_STORAGE_PATH "./"

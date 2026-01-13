@@ -1,4 +1,3 @@
-#include <curl/curl.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
@@ -8,6 +7,7 @@
 #include <netinet/in.h>
 #include <sys/socket.h>
 #include "hybrid_signature.h"
+#include "config.h"
 
 static int send_all(int sock, const uint8_t *buf, size_t len)
 {
@@ -16,12 +16,16 @@ static int send_all(int sock, const uint8_t *buf, size_t len)
         ssize_t n = send(sock, buf + sent, len - sent, 0);
         if (n <= 0)
             return -1;
-        sent += n;
+        sent += (size_t)n;
     }
     return 0;
 }
 
-int upload_signed_image(const uint8_t *image, size_t image_len, const hybrid_signature_t *sig, const uint8_t *pubkeys, size_t pubkeys_len)
+int upload_signed_image(const uint8_t *image,
+                        size_t image_len,
+                        const hybrid_signature_t *sig,
+                        const uint8_t *pubkeys,
+                        size_t pubkeys_len)
 {
     int sock;
     struct sockaddr_in addr;
@@ -36,7 +40,6 @@ int upload_signed_image(const uint8_t *image, size_t image_len, const hybrid_sig
         return -1;
 
     uint8_t *p = body;
-
     uint32_t n;
 
     n = htonl((uint32_t)image_len);
@@ -57,9 +60,15 @@ int upload_signed_image(const uint8_t *image, size_t image_len, const hybrid_sig
         return -1;
     }
 
+    memset(&addr, 0, sizeof(addr));
     addr.sin_family = AF_INET;
-    addr.sin_port = htons(8000);
-    inet_pton(AF_INET, "10.133.252.198", &addr.sin_addr);
+    addr.sin_port = htons(SERVER_PORT);
+
+    if (inet_pton(AF_INET, SERVER_IP, &addr.sin_addr) != 1) {
+        close(sock);
+        free(body);
+        return -1;
+    }
 
     if (connect(sock, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
         close(sock);
@@ -68,19 +77,22 @@ int upload_signed_image(const uint8_t *image, size_t image_len, const hybrid_sig
     }
 
     char header[256];
-    int header_len = snprintf(header, sizeof(header),
+    int header_len = snprintf(
+        header, sizeof(header),
         "POST / HTTP/1.1\r\n"
-        "Host: 10.133.252.198:8000\r\n"
+        "Host: %s:%d\r\n"
         "Content-Length: %zu\r\n"
         "\r\n",
-        body_len);
+        SERVER_IP, SERVER_PORT, body_len
+    );
 
-    if (send_all(sock, (uint8_t *)header, header_len) < 0 ||
+    if (header_len <= 0 ||
+        send_all(sock, (const uint8_t *)header, (size_t)header_len) < 0 ||
         send_all(sock, body, body_len) < 0) {
         close(sock);
         free(body);
         return -1;
-        }
+    }
 
     char response[128];
     recv(sock, response, sizeof(response), 0);
@@ -89,4 +101,3 @@ int upload_signed_image(const uint8_t *image, size_t image_len, const hybrid_sig
     free(body);
     return 0;
 }
-
