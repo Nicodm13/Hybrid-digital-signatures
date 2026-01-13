@@ -206,8 +206,9 @@ Edit `config.h`:
 cd build
 ./server        # WSL only
 ./hybrid_app    # Embedded system
-./verify
-./file_tamper
+./verify        # Verifies the signature
+./extract_image # Extracts the image to a .png  
+./file_tamper   # Modifies the signed .bin file resulting in a false verification
 ```
 
 ---
