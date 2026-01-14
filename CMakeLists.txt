@@ -34,7 +34,6 @@ add_executable(hybrid_app
         src/pq-signatures/sphincs_sig.c
         src/image_uploader.c
         src/image_buffer.c
-        src/benchmark.c
 )
 
 target_include_directories(hybrid_app
