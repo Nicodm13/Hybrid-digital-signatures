@@ -4,7 +4,7 @@
 #include "scheme.h"
 
 /* Hybrid Scheme selection */
-#define HYBRID_SCHEME ((scheme_t)SCHEME_ECDSA_ML_DSA)
+#define HYBRID_SCHEME ((scheme_t)SCHEME_RSA_PSS_SPHINCS)
 
 /* Server endpoint (WSL) */
 #define SERVER_IP "10.133.252.198"
