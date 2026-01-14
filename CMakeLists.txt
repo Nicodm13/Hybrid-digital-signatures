@@ -34,6 +34,7 @@ add_executable(hybrid_app
         src/pq-signatures/sphincs_sig.c
         src/image_uploader.c
         src/image_buffer.c
+        src/benchmark.c
 )
 
 target_include_directories(hybrid_app
@@ -88,3 +89,29 @@ target_include_directories(file_tamper
         PRIVATE
         ${PROJECT_SOURCE_DIR}/include
 )
+
+# Benchmark utility
+add_executable(benchmark
+        src/benchmark.c
+        src/hash.c
+        src/hybrid_signature.c
+        src/signatures/ecdsa_sig.c
+        src/signatures/rsa_pss_sig.c
+        src/pq-signatures/dilithium_sig.c
+        src/pq-signatures/falcon_sig.c
+        src/pq-signatures/sphincs_sig.c
+)
+
+target_include_directories(benchmark
+        PRIVATE
+        ${PROJECT_SOURCE_DIR}/include
+)
+
+target_link_libraries(benchmark
+        PRIVATE
+        oqs
+        crypto
+)
+
+
+
