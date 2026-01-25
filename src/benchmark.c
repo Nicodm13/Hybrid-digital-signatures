@@ -203,9 +203,16 @@ static void run_one_scheme(const scheme_def_t *def, const uint8_t *image, size_t
     uint8_t *pk1 = NULL, *pk2 = NULL;
     size_t pk1_len = 0, pk2_len = 0;
 
-    double t0 = now_seconds();
-    keygen_for_scheme(def->id);
-    t_keygen = (now_seconds() - t0) * 1000.0;
+    double t0;
+    t_keygen = 0.0;
+
+    for (int i = 0; i < NUM_ITERATIONS; i++) {
+        t0 = now_seconds();
+        keygen_for_scheme(def->id);
+        t_keygen += (now_seconds() - t0) * 1000.0;
+    }
+
+    t_keygen /= NUM_ITERATIONS;
 
     get_pks_for_scheme(def->id, &pk1, &pk1_len, &pk2, &pk2_len);
 
